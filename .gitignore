@@ -34,3 +34,4 @@ playground
 .well-known
 *.ejs.html
 mongo-backup
+config
