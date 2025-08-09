@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%- include ('./partials/header.ejs', {pageTitle: 'Place Holder'}); %>
+<%- include ('../partials/scrollPosition.ejs'); %>
+
+</head>
+<body>
+<%- include ('./partials/navbar.ejs'); %>
+<%- include ('../partials/logo.ejs', {expired: 0}); %>
+<%- include ('./partials/containerTop.ejs'); %>
+
+<h4 class="my-5 text-center"><%= message %></h4>
+
+<div class="brclear"></div>
+<%- include ('./partials/goBackButton.ejs'); %>
+<%- include ('./partials/containerBottom.ejs'); %>
+<%- include ('./partials/footer.ejs'); %>
+<%- include ('./partials/singlePageHeight.ejs'); %>
+<%- include ('./partials/navbarShrink.ejs'); %>
+</body>
+</html>
+

@@ -1,0 +1,108 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dry Farm Ranch - Prime Development Opportunity</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-green-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold">Dry Farm Ranch</h1>
+            <p class="text-lg mt-2">180 Acres of Untouched Wyoming Beauty</p>
+        </div>
+    </header>
+
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-center mb-8">A Premier Development Opportunity</h2>
+            <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto">
+                Located just 53 miles southeast of Ten Sleep, Wyoming, Dry Farm Ranch offers 180 acres of pristine, undeveloped land ready to be transformed into exclusive luxury home and ranch estates. This rectangular parcel is a developer's dream, combining vast open spaces with the rugged charm of the Wyoming landscape.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-center mb-8">Why Dry Farm Ranch?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <h3 class="text-xl font-bold text-green-800">Prime Location</h3>
+                    <p class="text-gray-600 mt-2">Nestled in the heart of Wyoming, only 53 miles from Ten Sleep, offering easy access while preserving rural tranquility.</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-bold text-green-800">Expansive Acreage</h3>
+                    <p class="text-gray-600 mt-2">180 acres of flat, rectangular land, ideal for subdividing into spacious luxury estates or ranches.</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-bold text-green-800">Natural Beauty</h3>
+                    <p class="text-gray-600 mt-2">Surrounded by sweeping views of rolling plains and distant mountains, perfect for high-end buyers seeking serenity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold mb-8">Ideal for Luxury Development</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                Dry Farm Ranch is perfectly suited for creating a gated community of luxury homes or expansive ranch estates. The flat terrain simplifies construction, while the vast acreage allows for generous lot sizes that appeal to affluent buyers seeking privacy and space. Capitalize on Wyoming’s growing demand for high-end rural properties.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-12 bg-green-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold mb-6">Ready to Build Your Vision?</h2>
+            <p class="text-lg mb-6">Dry Farm Ranch is a blank canvas for a visionary developer. Create an exclusive community that blends luxury with Wyoming’s timeless allure.</p>
+            <a href="mailto:info@dryfarmranch.com" class="inline-block bg-white text-green-800 font-semibold py-3 px-6 rounded-lg hover:bg-gray-200">Contact Us Today</a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Dry Farm Ranch. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

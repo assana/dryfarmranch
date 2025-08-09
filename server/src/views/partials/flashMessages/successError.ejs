@@ -1,0 +1,19 @@
+<% if(error && error.length > 0){ %>
+    <div id="errorMessage" class="alert alert-danger loginAlert text-center" role="alert">
+	<%= error %></div>
+
+<script type="text/javascript">
+    $("#errorMessage").delay(2000).fadeOut('fast');
+</script>
+
+<% } %>
+
+<% if(success && success.length > 0){ %>
+    <div id="successMessage" class="alert alert-success loginAlert text-center" role="alert">
+	<%= success %></div>
+
+<script type="text/javascript">
+    $("#successMessage").delay(2000).fadeOut('fast');
+</script>
+
+<% } %>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <style type="text/css">
+        body {
+            background: white;
+            color: #8f8f8f;
+	    margin: 1rem auto;
+	    padding: 0 1.5rem;
+	    max-width: 800px;
+            font: 1.0rem/1.0rem verdana, arial;
+        }
+
+	a:link {
+	    color: #8f8f8f;
+	}
+
+	h3,
+	h4 {
+	    font-family: arial, verdana;
+	    margin: 2rem 0;
+	}
+
+        #details {
+	    margin: 2rem 0;
+            font: 1.0rem/1.5rem verdana, arial;
+        }
+    </style>
+</head>
+<body>
+
+<div id="details">
+    <div>Date: <%=date%></div>
+    <div>Name: <%= infoRequest.customerName%></div>
+    <div>email: <a href="mailto:<%=infoRequest.email%>">
+	<%= infoRequest.email %></a></div>
+    <% if (infoRequest.phone) { %>
+	<div>Phone: <%=infoRequest.phone%>"</div>
+    <% } %>
+    <hr />
+    <div>Service: <%= infoRequest.service %></div>
+    <div>Request: <%= infoRequest.details %></div>
+
+    <div>
+	<hr />
+	<h4>ReCaptcha Data</h4>
+	<p>Challenge Time:<%=infoRequest.challenge_ts%><br />
+	   Hostname: <%=infoRequest.hostname%><br />
+	   Score: <%=infoRequest.score%>
+	</p>
+    </div>
+</div>
+
+</body>
+</html>
+

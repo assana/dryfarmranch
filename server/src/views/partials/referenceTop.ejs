@@ -1,0 +1,15 @@
+<div class="row m-0 p-0 py-3" id="referenceHeader">
+    <div class="col-12 header py-sm-1">References &amp; Links</div>
+</div>
+<div class="row m-0 p-0 py-3 justify-content-center align-items-center" id="reference">
+<% if(locals.gallery) { %>
+    <div class="col-12 col-md-3 m-0 p-2 align-content-center order-2 order-md-0">
+	<div class="caption stack">
+	    <a class="galleryHref" href="/gallery/<%=event.dirName%>" target="_blank">
+	    <img class="img-fluid" src="images/gallery.png"
+		alt="<%=event.title%>" /><br />Photos<br /></a>
+	</div>      <!-- gallery -->
+    </div>
+<% } %>
+<div class="col-12 col-md-9">
+<div class="row m-0 p-0 py-3 justify-content-around align-items-center">

@@ -1,0 +1,47 @@
+//
+// ********************
+// Bootstrap overwrites
+// ********************
+//
+
+
+.custom-toggler.navbar-toggler {
+    border-color: rgb(255,102,203);
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+a.nav-item {
+    padding-left: 0 !important;
+    padding-right: 1.5rem !important;
+}
+
+.nav-item a{
+    padding-left: 0;
+}
+
+.navbar-nav {
+    margin-right: 50px ;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.navbar-nav .cover {
+    height: 50vh;
+    width: 100%;
+    background: yellow;
+    border: 1px solid red;
+}
+
+.dropdown-toggle::after {
+    //content: none;
+}
+
+@media (max-width: 575.98px) {
+    .navbar-nav { 
+	z-index: 3 !important; 
+    }
+}

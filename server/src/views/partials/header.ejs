@@ -1,0 +1,40 @@
+<!-- Copyright 2020 DigitalPaso LLC -->
+<%if (locals.pageTitle === undefined) locals.pageTitle = 'Dan & Assana'; %>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="keywords" content="" />
+<meta property="og:image" content="/feed/<%=locals.dirName%>/images/<%=locals.thumbnail%>" />
+<title><%=locals.pageTitle%></title>
+
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="32x32"   href="/assets/icons/touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="167x167" href="/assets/icons/touch-icon-ipad-retina.png">
+
+<link rel="stylesheet" href="/libs/bootstrap-5.3.3-dist/css/bootstrap.min.css" >
+<link rel="stylesheet" href="/styles/main.css">
+<script type="text/javascript" src="/libs/js/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/libs/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/libs/js/moment.js"></script>
+<script type="text/javascript" src="/libs/node_modules/livephotoskit/livephotoskit.js"></script>
+
+<script type="text/javascript" src="/libs/js/moment.js"></script>
+<script type="text/javascript" src="/libs/pikaday/pikaday.js"></script>
+
+<%
+const siteKey = process.env.reCAPTCHA_SITE_KEY;
+const captchaURL = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+%>
+
+<script src="<%=captchaURL%>"></script>
+<script type="text/javascript" src="/scripts/utils.js"></script>
+
+<script>
+<%
+%>
+</script>
+
+

@@ -1,0 +1,89 @@
+@font-face {
+    font-family: SF-Light;
+    src: url('../Fonts/SF-UI/SF-UI-Text-Light.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: SF-Regular;
+    src: url('../Fonts/SF-UI/SF-UI-Text-Regular.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: SF-Medium;
+    src: url('../Fonts/SF-UI/SF-UI-Text-Medium.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: SF-Semibold;
+    src: url('../Fonts/SF-UI/SF-UI-Text-Semibold.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: SF-Bold;
+    src: url('../Fonts/SF-UI/SF-UI-Text-Bold.otf') format('opentype'); 
+}
+
+/*
+ *
+ */
+@font-face {
+    font-family: HanleyRough-Script;
+    src: url('../Fonts/HanleyRough/HanleyRough-Script.otf') format('opentype');
+}
+@font-face {
+    font-family: HanleyRough-Block;
+    src: url('../Fonts/HanleyRough/HanleyRough-Block.otf') format('opentype');
+}
+@font-face {
+    font-family: HanleyRough-BlockInline;
+    src: url('../Fonts/HanleyRough/HanleyRough-BlockInline.otf') format('opentype');
+}
+
+/*
+@font-feature-values "HanleyRough-BlockInline" {
+    @stylistic {
+	one: ss01;
+	two: ss02;
+	three: ss03;
+    }
+    @styleset { }
+}
+*/
+
+/* https://fontdrop.info */
+
+@font-face {
+    font-family: HanleyRough-Slim;
+    src: url('../Fonts/HanleyRough/HanleyRough-Slim.otf') format('opentype');
+}
+@font-face {
+    font-family: HanleyRough-SlimSerif;
+    src: url('../Fonts/HanleyRough/HanleyRough-SlimSerif.otf') format('opentype');
+}
+
+.HRBI_ss01 { font: inherit; font-feature-settings: 'ss01'; }
+.HRBI_ss02 { font: inherit; font-feature-settings: 'ss02'; }
+.HRBI_ss03 { font: inherit; font-feature-settings: 'ss03'; }
+.HRBI_swsh { font: inherit; font-feature-settings: 'swsh'; }
+.HRBI_aalt { font: inherit; font-feature-settings: 'aalt'; }
+
+.HRSS_ss01 { font: inherit; font-feature-settings: 'ss01'; }
+.HRSS_ss02 { font: inherit; font-feature-settings: 'ss02'; }
+.HRSS_ss03 { font: inherit; font-feature-settings: 'ss03'; }
+.HRSS_ss04 { font: inherit; font-feature-settings: 'ss04'; }
+.HRSS_ss05 { font: inherit; font-feature-settings: 'ss05'; }
+.HRSS_ss06 { font: inherit; font-feature-settings: 'ss06'; }
+.HRSS_ss07 { font: inherit; font-feature-settings: 'ss07'; }
+
+:root {
+    --content-font:		1.0rem/1.5rem SF-Regular, arial, verdana;
+    --content-h-font:		SF-Regular, arial, verdana;
+    --feed-font:		0.9rem/1.5rem SF-Regular, arial, verdana;
+    --mainNavTitle-font:	1.7em/1.4rem bigLimbo;
+    --reference-legend-font:	1.0rem/1.3rem SF-Regular, arial, verdana;
+    --reference-font:		0.85rem/1.3rem SF-Regular, arial, verdana;
+    --navLine-font:		0.85rem/1.5rem SF-Regular, arial, verdana;
+    --footer-font:		0.85rem/1.5rem SF-light, arial, verdana;
+    --light-font:		0.9rem/1.5rem SF-Light, arial, verdana;
+}
+

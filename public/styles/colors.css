@@ -1,0 +1,63 @@
+:root {
+    --dark-grey:	#1f1f1f;
+    --medium-grey3:	#3f3f3f;
+    --medium-grey7:	#7f7f7f;
+    --medium-grey5:	#5f5f5f;
+    --medium-grey9:	#9f9f9f;
+    --grey: 		#e0e0e0;
+    --light-grey: 	#f0f0f0;
+    --main-navigation:	#4f4f4f;
+    --link-color:	#006476;
+    --theme-color-leather:#A62814;
+    --theme-color-denim:#447BA6;
+
+    --header-background:var(--dark-grey);
+    --legend-background:var(--dark-grey);
+    --header-color: 	var(--grey);
+    --copyright-color:	var(--medium-grey7);
+    --visited-color:	var(--medium-grey7);
+    --hover-color:	var(--medium-grey3);
+    --active-color:	var(--medium-grey5);
+    --border-color:	var(--medium-grey9);
+    --footer-background:var(--light-grey);
+    --navbar-background: white;
+    --visited:		#e5fff2;
+    --notVisited:	#ffe5f2;
+
+/*
+--bg-color0:	rgb(209, 213, 203);
+*/
+    --bg-color0:	rgb(209, 213, 203);
+--bg-color0:	#CBB2A0;
+--bg-color0:	rgba(184, 152, 132, 0.70);
+    --bg-color1:	rgb(222, 220, 219);
+    --bg-color2:	rgb(216, 217, 215);
+    --bg-color3:	rgb(194, 196, 182);
+    --bg-color4:	rgb(177, 184, 186);
+    --bg-color5:	rgb(229, 233, 223);
+    --bg-color6:	rgb(239, 243, 233);
+    --bg-color7:	rgb(249, 253, 243);
+--bg-color7:	rgb(255, 250, 230);
+--bg-color8:	rgb(255, 255, 240);
+
+    --body-background:	var(--bg-color7);
+    --flyer-background:	var(--bg-color7);
+    --keyFeatures-background: var(--bg-color8);
+    --navbar-background:var(--body-background);	/* dirt color */
+    --navbar-background:rgba(184, 152, 132, 0.70);
+    --theme-color:	var(--theme-color-leather);	/* dirt color */
+}
+
+
+.btn-color0     { background: var(--bg-color0); }
+.btn-color1     { background: var(--bg-color1); }
+.btn-color2     { background: var(--bg-color2); }
+.btn-color3     { background: var(--bg-color3); }
+.btn-color4     { background: var(--bg-color4); }
+.btn-color5     { background: var(--bg-color5); }
+.btn-color6     { background: var(--bg-color6); }
+.btn-color7     { background: var(--bg-color7); }
+.btn-color8     { background: var(--bg-color8); }
+.btn-color9     { background: var(--bg-color9); }
+
+

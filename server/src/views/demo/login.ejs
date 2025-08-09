@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%- include ('../partials/header.ejs', {pageTitle: 'Login'}); %>
+</head>
+<body>
+<%- include ('../partials/navbar.ejs'); %>
+
+<%- include ('../partials/containerTop.ejs'); %>
+<div class="row justify-content-center makeRoomForAlert">
+<div class="col-12 col-sm-8 col-md-6">
+    <form id="loginForm" action="/saveDemoCookie" method="POST">
+    <div class="form-group">
+    <input class="form-control mt-3" type="hidden" name="username" value="demo@digitalpaso.com">
+    </div><div class="form-group">
+    <input class="form-control mt-3" type="password" name="secret" autofocus
+	placeholder="password">
+    </div>
+    </form>
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="col">
+            <%- include ('../partials/goBackButton.ejs'); %>
+        </div><div class="col d-flex justify-content-end">
+	    <button form="loginForm" class="btn btn-secondary right">Login</button>
+        </div>
+    </div>
+</div>
+</div>
+<%- include ('../partials/containerBottom.ejs'); %>
+<%- include ('../partials/footer.ejs'); %>
+<%- include ('../partials/singlePageHeight.ejs'); %>
+<%- include ('../partials/navbarShrink.ejs'); %>
+</body>
+</html>
+

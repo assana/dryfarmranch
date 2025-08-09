@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%- include ('../partials/header.ejs', {pageTitle:'Test Colors'}); %>
+<%- include ('../partials/scrollPosition.ejs'); %>
+<script>
+    var lastIndex = 0;
+    const updateColor = (bg, index) => {
+        lastIndex = setBackgroundColor(bg, index);
+        lastIndex = setNavbarColor(bg, index);
+    }
+
+</script>
+
+<style type="text/css">
+    .currentBgColor {
+	display: inline;
+    }
+    .swatch {
+	border: 1px solid grey;
+    }
+
+    .btn {
+	width: 100%;
+    }
+    .serviceCardTrans {
+	border: 1px solid var(--border-color);
+	background: var(--body-background);
+    }
+
+</style>
+
+</head>
+<body>
+
+<%- include ('../partials/navbar.ejs'); %>
+<%- include ('../partials/containerTop.ejs'); %>
+
+<h4 class="m-0 p-0 d-flex justify-content-center justify-content-md-start mt-4">
+    Backgrounds</h4>
+<div class="row p-0 m-0 align-items-between">
+<% backgrounds.forEach((bg, index) => { %>
+    <div class="col-3 text-center">
+	<button class="my-3 btn btn-lg btn-light btn-outline-secondary"
+	    style="background: <%=bg.bg%>"
+	    onclick="updateColor('<%=bg.bg%>', <%=index%>);">
+	    <%=bg.name%><div class='text-center currentBgColor'><%if(index===3){%>*<%}%></div>
+	</button>
+    </div>
+<% }); %>
+
+<div class="fullPage row m-0 justify-content-center">
+    <div class="col-12 d-flex justify-content-center my-5 py-3">
+	<div id="mainLogo" class="d-flex align-items-center justify-content-center" >
+	    <div class="logoText text-center">
+		<span class="HRSS_ss05" style="color: var(--theme-color-leather)">
+		    DRY FArm raNch</span>
+	    </div>
+	</div>
+    </div>
+    <div class="col-12 d-flex justify-content-center my-5 py-3">
+	<div id="mainLogoDenim" class="d-flex align-items-center justify-content-center" >
+	    <div class="logoText text-center">
+		<span class="HRSS_ss05">DRY FArm raNch</span>
+	    </div>
+	</div>
+    </div><div class="col-12 d-flex justify-content-center mt-5">
+    </div>
+</div>      <!-- row -->
+
+<div class="col col-sm-2 d-flex align-items-end justify-content-center">
+        <div class=""> 
+	</div>
+</div>
+
+<%- include ('../partials/containerBottom.ejs'); %>
+<%- include ('../partials/footer.ejs'); %>
+<%- include ('../partials/singlePageHeight.ejs'); %>
+<%- include ('../partials/navbarShrink.ejs'); %>
+
+</body>
+</html>

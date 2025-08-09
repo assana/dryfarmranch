@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%- include ('../partials/header.ejs', {pageTitle: 'Login'}); %>
+<%- include ('../partials/scrollPosition.ejs'); %>
+</head>
+<body>
+<%- include ('../partials/navbar.ejs'); %>
+<%- include ('../partials/logo.ejs', {expired: 0}); %>
+<%- include ('../partials/containerTop.ejs'); %>
+
+<div class="row m-0 mt-4 justify-content-center d-flex align-self-center makeRoomForAlert">
+<div class="col-12 col-sm-8 col-md-6">
+    <h4 class="text-center m-0 p-0 mb-4">User Login</h4>
+
+    <form id="loginForm" action="/login" method="POST">
+
+    <div class="form-group">
+    <input class="form-control mt-3" type="email" name="username" autofocus
+        placeholder="email">
+    </div><div class="form-group">
+    <input class="form-control mt-3" type="password" name="password"
+        placeholder="password">
+    </div><div class="form-group">
+    </div>
+    </form>
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="col">
+            <%- include ('../partials/goBackButton.ejs'); %>
+        </div><div class="col d-flex justify-content-end">
+            <button form="loginForm" class="btn btn-secondary right m-0 mt-4">Login</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<%- include ('../partials/containerBottom.ejs'); %>
+<%- include ('../partials/footer.ejs'); %>
+<%- include ('../partials/singlePageHeight.ejs'); %>
+<%- include ('../partials/navbarShrink.ejs'); %>
+</body>
+</html>
+

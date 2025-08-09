@@ -1,0 +1,34 @@
+<script type="text/javascript">
+$(document).ready(async function() {
+    try {
+        const key = await fetch ('/reCaptchaKey', {
+            method: "POST",
+            body: JSON.stringify({}),
+            headers: { "Content-Type": "application/json"},
+            json: true
+        });
+        const siteKey = (await key.json()).siteKey;
+        grecaptcha.ready(async () => {
+            grecaptcha.execute(`${siteKey}`, {action: 'homepage'}).then(async (token) => {
+                try {
+                    const json = JSON.stringify({token});
+                    const response = await fetch ('/homepage', {
+                        method: "POST",
+                        body : json,
+                        headers: { "Content-Type": "application/json" }
+                    });
+                    const data = await response.json();
+                } catch (e) {
+                    return (e);
+                }
+            }).catch((error) => {
+                console.log('Error!', error);
+                window.location.assign ('/');
+            });
+        });
+    } catch (e) {
+        console.log(e);
+    }
+});
+</script>
+

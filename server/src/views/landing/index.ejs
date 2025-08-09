@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<%- include ('../partials/header.ejs', {pageTitle:'Dry Farm Ranch'});  %>
+<%- include ('../partials/scrollPosition.ejs'); %>
+
+<%- include ('partials/styles.ejs'); %>
+<style type="text/css">
+.grecaptcha-badge  { visibility: visible; }
+</style>
+
+</head>
+
+<body>
+<%- include ('../partials/navbar.ejs'); %>
+
+<div id="banner" class=""><img src="Assets/Banner.jpg" alt="Banner" /></div>
+
+<%- include ('../partials/containerTop.ejs'); %>
+
+<%- include ('partials/writeup'); %>
+
+<%- include ('../partials/contactUs.ejs'); %>
+<%- include ('../partials/containerBottom.ejs'); %>
+<%- include ('../partials/footer.ejs'); %>
+<%- include ('../partials/singlePageHeight.ejs'); %>
+<%- include ('../partials/navbarShrink.ejs'); %>
+</body>
+
+<%- include ('./partials/reCaptcha.ejs'); %>
+
+</html>

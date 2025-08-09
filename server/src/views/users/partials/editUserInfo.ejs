@@ -1,0 +1,83 @@
+<div class="p-2 w-100 profileEditCard">
+    <form id="regForm" action="/users?_method=PATCH" method="POST">
+	<div class="row p-0 m-0 mt-2">
+	    <label class="col-4 col-form-label text-end" for="username">email</label>
+	    <div class="col-8 m-0 p-0">
+		<input class="col form-control" type="email" name="username" required
+		    onChange='enableSaveButton("userInfoSaveButton")'
+		    value="<%= locals.me.username %>" >
+	    </div>
+	</div>
+	<div class="row p-0 m-0 mt-2">
+	    <label class="col-4 col-form-label text-end" for="firstname">First Name</label>
+	    <div class="col-8 m-0 p-0">
+	    <input class="form-control" type="text" name="firstname"
+		onChange='enableSaveButton("userInfoSaveButton")'
+		value="<%= locals.me.firstname %>" >
+	    </div>
+	</div>
+	<div class="row p-0 m-0 mt-2">
+	    <label class="col-4 col-form-label text-end" for="lastname">Last Name</label>
+	    <div class="col-8 m-0 p-0">
+	    <input class="form-control" type="text" name="lastname"
+		onChange='enableSaveButton("userInfoSaveButton")'
+		value="<%= locals.me.lastname %>" >
+	    </div>
+	</div>
+    </form>
+    <div class="row p-0 m-0 mt-3">
+    <div class="col p-0 m-0 d-flex justify-content-center justify-content-md-end">
+	<div class="form-group">
+	    <button form="regForm" type="reset" 
+		onClick='disableSaveButton("userInfoSaveButton")'
+		class="btn btn-outline-secondary right mx-2" >Reset</button>
+	    <button form="regForm" type="submit" disabled 
+		id="userInfoSaveButton"
+		class="btn btn-outline-secondary right m-0 ms-2">Save</button>
+	</div>
+    </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row p-0 m-0 mt-2">
+	<div class="col-4 text-end">Joined on</div>
+	<div class="col-8 m-0 p-0"><%= locals.me.start%></div>
+    </div>
+    <div class="row p-0 m-0 mt-2">
+	<div class="col-4 text-end">Demo Expires on</div>
+	<div class="col-8 m-0 p-0"><%= locals.me.end%></div>
+    </div>
+    <div class="row p-0 m-0 mt-3">
+    <div class="col p-0 m-0 d-flex justify-content-center justify-content-md-end">
+	<div class="form-group">
+	    <a href="/subscribe" class="btn btn-outline-secondary right mx-2">[Fix My Color] Upgrade</a>
+	</div>
+    </div>
+    </div>
+
+    <hr class="my-4" />
+    <% if (owner) { %>
+	<form id="passwordForm" action="/users/password" method="POST">
+	    <div class="row d-flex justify-content-between p-0 m-0 my-3">
+		<label class="col-4 pe-3 col-form-label text-end" for="password">Password</label>
+		<input class="col m-0 form-control" type="password" name="password" 
+		    onChange='enableSaveButton("passwordSaveButton")'
+		    placeholder="New Password" >
+	    </div>
+	</form>
+	<div class="d-flex justify-content-center justify-content-md-end">
+	    <div class="form-group">
+		<button form="passwordForm" type="reset" 
+		    onClick='disableSaveButton("passwordSaveButton")'
+		    class="btn btn-outline-secondary right ms-2">Reset</button>
+		<button form="passwordForm" id="passwordSaveButton" disabled type="submit" 
+		    class="btn btn-outline-secondary right ms-2">Update Password</button>
+	    </div>
+	</div>
+    <% } else { %>
+	<div class="d-flex justify-content-end">
+	    <button form="passwordForm" type="submit" 
+		class="btn btn-outline-secondary right ms-2">Send Reset Password</button>
+	</div>
+    <% } %>
+</div>

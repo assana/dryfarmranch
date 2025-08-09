@@ -1,0 +1,157 @@
+@import "/styles/fonts.css" screen;
+@import "/styles/colors.css" screen;
+@import "/styles/navigation.css" screen;
+@import "/styles/bootstrapStyles.css" screen;
+@import "/styles/footer.css" screen;
+@import "/styles/reCaptcha.css" screen;
+/*@import "/styles/debug.css" screen;*/
+
+.debug  { border: 1px solid red !important; }
+.debug2 { border: 2px solid yellow !important; }
+
+.fullHeight { height: 100vh; }
+.fullWidth { width: 100vh; }
+
+* {
+    font-family: SF-Light, -apple-system, HanleyRough-Slim, arial, verdana;
+}
+
+body {
+    background: var(--body-background);
+    color: #4f4f4f;
+    margin: 0;
+    padding: 0;
+    /*font: var(--lightFont_S);*/
+    min-height: 100vh;
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+}
+
+p {
+    font: 1.0rem/1.5rem SF-Light, arial, verdana;
+}
+
+h5 {
+    font: 1.3rem/1.9rem SF-Light, SF-Regular, arial, verdana;
+}
+
+#primarySection {
+}
+
+.defaultAvatar {
+    font: 7.0rem/3.0rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
+    color: var(--theme-color);
+    border: 2px solid var(--theme-color);
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+}
+
+#content{
+    font: var(--content-font);
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    clear: both;
+}
+
+.btn:focus,.btn:active,
+.noOutline {
+   outline: none !important;
+   box-shadow: none !important;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lclear { clear: left; }
+.rclear { clear: right;}
+.brclear{ clear: both; }
+.makeOpaque { opacity: 1.0 !important; }
+
+.light-border {
+    border: 1px solid var(--medium-grey7);
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.keyPhoto {
+    margin: 0;
+    padding: 0;
+}
+
+img.keyPhoto,
+.keyPhoto img {
+    width: 100%;
+    height: auto;
+}
+
+a:link, a:visited {
+    color: #006476;
+    color: var(--link-color);
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+a:active {
+    color: var(--active-color);
+    text-decoration: none;
+}
+
+.formCard {
+    background-color: white;
+    border: 1px solid var(--medium-grey9);
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+/* Extra small, iPhone SE */
+@media (max-width: 319.98px) {
+    .carousel-indicators { bottom: 1.0rem; }
+    .livePhoto {
+	width: calc(100%);
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .carousel-indicators { bottom: 1.0rem; }
+    .livePhoto {
+	width: calc(100%);
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .carousel-indicators { bottom: 1.0rem; }
+    .livePhoto {
+	width: calc(100%);
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .carousel-indicators { bottom: 3.3rem; }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { 
+}
+
+
+

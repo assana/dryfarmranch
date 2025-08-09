@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%- include ('./partials/header.ejs', {
+    pageTitle:'home: Dry Farm Ranch',
+    thumbnail: current.paths.thumbnail,
+    dirName: current.dirName,
+}); %>
+<%- include ('./partials/scrollPosition.ejs'); %>
+</head>
+<body>
+<%- include ('./partials/navbar.ejs') %>
+<%- include ('./partials/containerTop.ejs'); %>
+
+<div class="row m-1 align-items-center">
+    <div class="col-12 col-md-3"></div>
+    <div class="col-12 col-md-6 d-flex justify-content-center mt-5">
+        <a href="/feed/<%=current.dirName%>">
+        <img class="img-fluid m-0 p-0" alt="<%=current.title%>"
+            src="/feed/<%=current.dirName%>/images/cover.png" >
+        </a>
+    </div>
+    <div class="col-12 col-md-3"></div>
+    <div class="col-12 text-center mt-2">
+        <a href="feed/<%=current.dirName%>"><%=current.title%></a>
+        <br /><p class='eventDate text-center'><%= current.timeSince %></p>
+    </div>
+</div>      <!-- row -->
+
+<%- include ('./partials/containerBottom.ejs'); %>
+<%- include ('./partials/footer.ejs'); %>
+<%- include ('./partials/navBarShrink.ejs'); %>
+<%- include ('./partials/singlePageHeight.ejs'); %>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%- include ('../partials/header.ejs', {pageTitle: 'Profile'}); %>
+<%- include ('../partials/scrollPosition.ejs'); %>
+<%- include ('../partials/toggleExpandCollaps.ejs'); %>
+</head>
+
+<body>
+<%- include ('../partials/navbar.ejs'); %>
+<%- include ('../partials/logo.ejs', {expired: 0}); %>
+<%- include ('../partials/containerTop.ejs'); %>
+
+<section id="userInfomation" class="">
+<div class="row p-0 m-0 d-flex align-items-center light-border">
+<div class="col-12 col-md-6 
+    d-flex justify-content-center p-0 m-0 my-2 pe-md-2">
+    <%- include ('./partials/editAvatar.ejs', {me, owner}); %>
+</div><div class="col-12 col-md-6 
+    d-flex align-items-stretch justify-content-center p-0 m-0 my-2 ps-md-2">
+    <%- include ('./partials/editUserInfo.ejs', {me, owner}); %>
+</div>
+</div>
+</section>
+
+<div class="brclear"></div>
+
+<%- include ('../partials/goBackButton.ejs'); %>
+<%- include ('../partials/containerBottom.ejs'); %>
+<%- include ('../partials/showFilename.ejs'); %>
+<%- include ('../partials/footer.ejs'); %>
+<%- include ('../partials/singlePageHeight.ejs'); %>
+<%- include ('../partials/navbarShrink.ejs'); %>
+</body>
+</html>
+

@@ -1,0 +1,17 @@
+<script type="text/javascript">
+$(document).ready(function() {
+    let offset = 
+	document.querySelector("#footer").getBoundingClientRect().height +
+	document.querySelector("#mainNavBar").getBoundingClientRect().height;
+    let height = `calc(100vh - ${offset}px)`;
+    document.querySelector("#mainContainer").style.minHeight = height;
+
+    $(window).resize(() => {    
+	let offset = 
+	    document.querySelector("#footer").getBoundingClientRect().height +
+	    document.querySelector("#mainNavBar").getBoundingClientRect().height;
+	let height = `calc(100vh - ${offset}px)`;
+	document.querySelector("#mainContainer").style.minHeight = height;
+    });
+});
+</script>

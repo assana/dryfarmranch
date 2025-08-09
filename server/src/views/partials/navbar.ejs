@@ -1,0 +1,50 @@
+<%- /*include ('analytics.ejs');*/ %>
+
+<nav id="mainNavBar" class="navbar sticky-top m-0 pb-2 navbar-expand-md navbar-light bg-light">
+<div class="container-fluid">
+
+<button id="hamburger" class="pb-2 navbar-toggler type="button" data-bs-toggle="collapse"
+    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<!-- Mobile navigation -->
+<div id="" class="d-md-none d-flex flex-row flex-md-nowrap flex-wrap">
+    <div class="nav-link p-0 m-0 pe-2 pb-3">
+	<div id="mobileLogo" class="mobileLogoText">
+	    <span class="HRSS_ss04">DFR</span>
+	</div>
+    </div>
+</div>
+
+<div id="navbarNav" class="collapse navbar-collapse 
+    align-items-start justify-content-start justify-content-md-between noOutline">
+
+    <div class="navbar-nav align-items-md-start text-center">
+	<a class="nav-link d-flex justify-self-start ps-0" href="/">Home</a>
+	<a class="nav-link" href="/about">About</a>
+    </div>
+
+    <div id="brand" class="d-none d-md-flex align-items-start justify-content-center">
+	<a class="navbar-brand d-flex align-self-center p-0 m-0" href="/">
+	    <div id="mainLogo" class="d-flex align-items-start justify-content-center" >
+		<div class="logoText text-center">
+		    <span class="HRSS_ss05">DRY FArm raNch</span>
+		</div>
+	    </div>
+	</a>
+    </div>
+
+    <div class="navbar-nav align-items-md-start text-center">
+	<div class="nav-link hidden">Empty</div>
+	<%- include ('./navbarItems/demo.ejs') %>
+    </div>	<!-- navbar-nav -->
+</div>
+
+</div>
+</nav>
+
+
+<div class="brclear"></div>
+

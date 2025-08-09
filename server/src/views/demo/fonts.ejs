@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%- include ('../partials/header.ejs', {pageTitle:'Test Fonts'}); %>
+<%- include ('../partials/scrollPosition.ejs'); %>
+<style type="text/css">
+.CormorantUnicaseLight {
+    font: 2.5rem/3.0rem CormorantUnicase-Light, papyrus, SF-Light, arial, verdana;
+    color: var(--medium-grey3);
+}
+.CormorantUnicaseRegular {
+    font: 2.5rem/3.0rem CormorantUnicase-Regular, papyrus, SF-Light, arial, verdana;
+    color: var(--medium-grey3);
+}
+.CormorantGaramondLight {
+    font: 2.5rem/3.0rem CormorantGaramond-Light, papyrus, SF-Light, arial, verdana;
+    color: var(--medium-grey3);
+}
+.CormorantGaramondRegular {
+    font: 2.5rem/3.0rem CormorantGaramond-Regular, papyrus, SF-Light, arial, verdana;
+    color: var(--medium-grey3);
+}
+.CinzelRegular {
+    font: 2.5rem/3.0rem Cinzel-Regular, papyrus, SF-Light, arial, verdana;
+    color: var(--medium-grey3);
+}
+
+.smaller {
+    font-size: 1.5rem;
+}
+
+.maintenance {
+    font: 1.0rem/1.0rem SF-Light, arial, verdana;
+    color: var(--medium-grey5);
+}
+
+</style>
+</head>
+<body>
+<%- include ('../partials/navbar.ejs') %>
+<%- include ('../partials/flashMessages/successError.ejs'); %>
+<%- include ('../partials/containerTop.ejs'); %>
+
+<div class="fullPage row m-0">
+    <div class="col-12 mt-5">
+	<div class="CinzelRegular center">JP Paving &amp; Grading*</div>
+	<div class="CinzelRegular center smaller">(Cinzel Regular)</div>
+    </div><div class="col-12 mt-5">
+	<div class="CormorantUnicaseLight center">JP Paving &amp; Grading</div>
+	<div class="CormorantUnicaseLight center smaller">(Cormorant Unicase Light)</div>
+    </div><div class="col-12 mt-5">
+	<div class="CormorantGaramondLight center">JP Paving &amp; Grading</div>
+	<div class="CormorantGaramondLight center smaller">(Cormorant Garamond Light)</div>
+    </div><div class="col-12 mt-5">
+	<div class="CormorantGaramondRegular center">JP Paving &amp; Grading</div>
+	<div class="CormorantGaramondRegular center smaller">(Cormorant Garamond Regular)</div>
+    </div><div class="col-12 mt-5">
+	<div class="CormorantUnicaseRegular center">JP Paving &amp; Grading</div>
+	<div class="CormorantUnicaseRegular center smaller">(Cormorant Unicase Regular)</div>
+    </div>
+</div>      <!-- row -->
+
+<%- include ('../partials/containerBottom.ejs'); %>
+<%- include ('../partials/footer.ejs'); %>
+<%- include ('../partials/singlePageHeight.ejs'); %>
+<%- include ('../partials/navbarShrink.ejs'); %>
+</body>
+</html>

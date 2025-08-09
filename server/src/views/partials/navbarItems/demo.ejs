@@ -1,0 +1,21 @@
+<div class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle noOutline" href="/"
+        id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+        _data-bs-auto-close="outside"
+        aria-haspopup="true" aria-expanded="false">Login
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+	<a class="dropdown-item px-3" href="/demo/fonts">Fonts</a>
+	<a class="dropdown-item px-3" href="/demo/colors">Colors</a>
+	<div class="dropdown-divider"></div>
+	<a class="dropdown-item px-3" href="/demo/destroySession">Destroy Session</a>
+	<a class="dropdown-item px-3" href="/demo/clearCookies">Clear Cookies</a>
+	<% if ((currentUser && currentUser.firstname === 'Assana') ||
+	       (process.env.NODE_ENV === 'development')){ %>
+	    <div class="dropdown-divider"></div>
+	    <a class="dropdown-item px-3" href="/">Assana's Items</a>
+	    <a class="dropdown-item px-3" href=""></a>
+	<% } %>
+    </div>
+</div>

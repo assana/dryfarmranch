@@ -1,0 +1,33 @@
+<div class="p-2 w-100 profileEditCard">
+<div class="row m-0 p-0 d-flex align-items-center justify-content-center position-relative">
+
+<% if (me.hasAvatar) { %>
+    <div class="col-8 position-relative">
+	<img class="img-fluid p-0 m-0 my-2 userThumbnailFullSize"
+	    src='/users/<%= me._id %>/avatar'>
+    </div>
+<% } else { %> 
+    <div class="center defaultAvatar logoText">
+	<span class="HRSS_ss04"><%=locals.me.initialA%></span><%=locals.me.initialB%></div>
+<% } %>
+
+<% if (owner) { %>
+<div class="col-12 m-0 p-0 mt-3">
+    <form class="m-0 mt-2" action="/users/<%= me._id %>/avatar?_method=PATCH" method="POST"
+	    enctype="multipart/form-data">
+	<div class="input-group">
+	    <input type="file" class="form-control custom-file-input hideFilename"
+		id="avatarFilename"
+		name="avatar" accept="image/*"
+		onChange="fileSelectedForUpload();">
+	    <button class="btn btn-outline-secondary" type="submit"
+		id="avatarFileUploadButton" disabled>Upload</button>
+	</div>
+    </form>
+</div>
+<% } %>
+
+</div>
+</div>
+
+

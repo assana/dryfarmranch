@@ -1,0 +1,171 @@
+/*
+ * Navigation bars
+ */
+
+@import "/styles/fonts.css" screen;
+@import "/styles/colors.css" screen;
+
+nav {
+    width: 100%
+}
+
+.navbar-toggler-icon,
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.version {
+    font: 1.0rem/1.5rem SF-Light, arial, verdana;
+    color: var(--dark-grey) !important;
+    border: 1px solid var(--dark-grey);
+    border-radius: 4px;
+    background: var(--theme-color);
+    padding: 0.2rem;
+}
+
+a.dropdown-toggle:link {
+    text-decoration: none;
+}
+
+.dropdown-toggle-split,
+.split-link,
+.nav-link {
+    color: var(--dark-grey) !important;
+    font-variant-caps:all-small-caps !important;
+    font: 1.0rem/1.5rem SF-Light, arial, verdana;
+    border: 0 !important;
+    outline: 0 !important;
+}
+
+.navbar-header{
+    width: 100%;
+    text-align: center;
+}
+
+#brand {
+    transform-origin: top;
+}
+
+#navbarNav {
+}
+
+#mainNavBar {
+    transition: 0.5s opacity ease;
+    z-index: 20;
+    position: sticky !important;
+    position: -webkit-sticky !important;
+    background-color: var(--navbar-background) !important;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    height: auto;
+}
+
+#mainNavBar .navbar-brand {
+    margin: 0;
+    font: 4.0rem/3.0rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
+    padding: 2em 1em;
+}
+
+#mainNavBar .navbar-collapse {
+    font-size: 2.0rem;
+}
+
+@keyframes shrink {
+    0% {
+    }
+    100% {
+	transform: scale(0.5);
+	-webkit-transform: scale(0.5);
+    }
+}
+@keyframes expand {
+    0% {
+    }
+    100% {
+	transform: scale(1.0);
+	-webkit-transform: scale(1.0);
+    }
+}
+
+.shrinkMainLogo {
+    animation-name: shrink;
+}
+
+.hidden {
+    _color: var(--theme-background) !important;
+    visibility: hidden;
+}
+
+#brand {
+    background: transparent;
+    width: auto;
+    height: 10rem;
+}
+
+#brand a {
+    padding: 0;
+    text-decoration: none;
+}
+
+#brand a:hover,
+#brand a:link,
+#brand a:visited {
+    text-decoration: none;
+}
+
+#logo {
+    color: white;
+    background: var(--theme-color) !important;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 1.4rem/1.0rem Poppins-light, SF-Light, arial, verdana;
+    border-radius: 50%;
+}
+
+.nav-photos {
+    color: var(--gallery-link) !important;
+    border: 1px solid var(--gallery-link);
+}
+
+/* 
+ *
+ * media types
+ * 
+ */
+
+/* Extra small, iPhone SE */
+@media (max-width: 319.98px) {
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { 
+}
+

@@ -1,0 +1,43 @@
+<section id="emp<%=locals.empIndex%>">
+<div class="profileEditCard m-0 p-0 my-3 pb-2">
+
+<!-- Avatar & user data row -->
+<div class="row align-items-center p-0 m-0 pb-2">
+<div class="col-2 position-relative p-0 m-0 p-3 d-flex justify-content-center align-items-center">
+    <%- include ('./avatar.ejs', {emp}); %>
+</div> <div class="col-10 p-0 m-0 px-3">
+    <%- include ('../../admin/partials/userData.ejs', {emp}); %>
+</div> 
+
+<!-- Archive button row -->
+<div class="row d-flex justify-content-between align-items-center p-0 m-0">
+<div class="col-2 p-0 m-0 px-2 d-flex justify-content-center align-items-center">
+    <a class="" href="/admin/delete/<%=emp._id%>">
+	<button type="submit" class="btn btn-outline-danger m-0 ms-2">Archive</button>
+    </a>
+</div><div class="col-2 p-0 m-0 px-2 d-flex justify-content-end align-items-center">
+    <a href="/users/profile/<%= locals.emp._id %>">
+        <button class="btn btn-outline-secondary">Employee Profile</button>
+    </a>
+</div>
+</div>
+
+</div> <!-- Data row -->
+
+<% if (emp.timesheet && emp.timesheet.punchIn.length) { %>
+    <!-- Timesheet and payment -->
+    <div class="row align-items-center p-0 m-0 p-2">
+	<hr class="mt-3" />
+	<%- include ('../../timesheet/partials/details.ejs', 
+	    {timesheet: emp.timesheet, projNames}); %>
+    </div>
+<% } %>
+
+
+<!-- timeoff -->
+<%- include ('../../timeoff/partials/list.ejs', {timeoff: emp.timeoff}); %>
+
+<!-- Outer wrapper -->
+</div>
+</section>
+

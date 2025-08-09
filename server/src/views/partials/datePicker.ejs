@@ -1,0 +1,23 @@
+<script>
+    const today = moment().format('MMM Do');
+    const tomorrow = moment().add(1, 'days');
+    const nextWeek = moment().add(7, 'days').calendar();
+    const lastYear = moment().subtract(1, 'years');
+    var picker = new Pikaday({
+        field: document.querySelector('#datepicker'),
+        format: 'MMM Do YYYY',
+        yearRange: 1,
+        showDaysInNextAndPreviousMonths: true,
+        defaultDate: today,
+        setDefaultDate: true,
+        firstDay: 0,
+        numberOfMonths: 1,
+        minDate: lastYear,
+        //maxDate: nextWeek,
+
+        onSelect: function() {
+            //var date = document.createTextNode(this.getMoment().format('MMM Do') + ' ');
+            //document.querySelector('#datepicker').value = date;
+        }
+    });
+</script>

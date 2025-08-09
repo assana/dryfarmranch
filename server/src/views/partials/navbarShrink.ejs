@@ -1,0 +1,33 @@
+<script type="text/javascript">
+const adjustNavbarHeight = () => {
+    if (mainNavBar.getBoundingClientRect().width) {
+	var scroll = $(window).scrollTop();
+	let scale = 1.0;
+	if (scroll <= 0) {
+	    scale = 1.0;
+	} else if (scroll <= 160) {
+	    scale = 1.0 - (scroll*0.5)/160.0;
+	} else {
+	    scale = 0.5;
+	}
+	brand.style.transform = `scale(${scale})`;
+	//mainNavBar.style.height = `${scale*10}rem`;
+	navbarNav.style.height = `${scale*10}rem`;
+    } else{
+	navbarNav.style.height = 'auto';
+    }
+}
+
+$(document).ready(function() {
+    const mainNavBar = document.querySelector("#mainNavBar");
+    const brand = document.querySelector("#brand");
+    const navbarNav = document.querySelector("#navbarNav");
+    $(window).scroll(function() {    
+	adjustNavbarHeight();
+    }); 
+    $(window).resize(function() {    
+	adjustNavbarHeight();
+    });
+});
+</script>
+

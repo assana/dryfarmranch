@@ -1,0 +1,67 @@
+<script type="text/javascript">
+
+'use strict';
+
+$(document).ready(function() {
+/*
+// A Player built from a new DIV:
+const player = LivePhotosKit.createPlayer();
+document.body.appendChild(player);
+player.photoSrc = "..."
+player.videoSrc = "..."
+*/
+
+if (0) {
+// Create the player using a pre-existing DOM element.
+const livePhotos = document.querySelectorAll('.livePhoto');
+console.log(`------${livePhotos.length} livePhotos--------`);
+livePhotos.forEach ((photo) => {
+
+    const player = LivePhotosKit.augmentElementAsPlayer(photo);
+    player.addEventListener('videoload', (evt) => {
+	console.log('video finished loading', evt);
+    });
+
+    // Listen to events the player emits.
+    player.addEventListener('canplay', (evt) => {
+	console.log('player ready', evt)
+    });
+
+    player.addEventListener('ended', (evt) => {
+	console.log('player finished playing through', player.duration)
+    });
+
+    /*
+    // Use the playback controls.
+    //player.playbackStyle = LivePhotosKit.PlaybackStyle.HINT;
+    //player.playbackStyle = LivePhotosKit.PlaybackStyle.HINT;
+    //player.playbackStyle = LivePhotosKit.PlaybackStyle.LOOP;
+    //player.play();
+    //player.pause();
+    //player.toggle();
+    //player.stop();
+    //player.currentTime = 0.25 * player.duration;
+    //player.currentTime = 0.0;
+    */
+
+    player.addEventListener('error', (ev) => {
+	if (typeof ev.detail.errorCode === 'number') {
+	    switch (ev.detail.errorCode) {
+	    case LivePhotosKit.Errors.IMAGE_FAILED_TO_LOAD:
+		console.log('Could not load image', ev.detail);
+		break;
+	    case LivePhotosKit.Errors.VIDEO_FAILED_TO_LOAD:
+		console.log('Could not load video', ev.detail);
+		break;
+	    }
+	} else {
+	    // Extract error.
+	    console.error(ev.detail.error);
+	}
+    })
+});
+}
+
+});
+</script>
+

@@ -1,0 +1,109 @@
+<div class="row p-0 m-0 d-flex justify-content-center contentRow">
+
+<div class="col-12 col-md-11 m-0 p-2 p-md-0">
+    <div class="contentHeader">Contact Us</div>
+
+<div class="row m-0 p-0 mt-2 d-flex _justify-content-between _align-items-stretch">
+<div class="col-12 col-md-8 m-0 p-0 verticalLine">
+
+<form id="contactForm" class="p-0 m-0" action="/contact" method="POST">
+    <div class="row m-0 p-0 mt-2 d-flex justify-content-around">
+	<div class="col-12 col-md-6 m-0 p-0 pe-md-2 mb-2">
+	<input class="form-control" type="text"
+		name="customerName" required placeholder="Name" >
+	</div>
+	<div class="col-12 col-md-6 m-0 p-0 px-md-2 mb-2">
+	    <input class="form-control" type="email"
+		name="email" required placeholder="email">
+	</div>
+	<div class="col-12 col-md-6 m-0 p-0 pe-md-2 mb-2">
+	    <input class="form-control m-0" type="tel" minlength=10 name="phone" required
+		placeholder="(###) ###-####">
+	</div>
+	<div class="col-12 col-md-6 m-0 p-0 px-md-2 mb-2">
+	</div>
+	<div class="col-12 col-md-12 m-0 p-0 pe-md-2 mb-2">
+	<textarea class="form-control" name="details" required
+	    placeholder="How can we help?" rows="3"></textarea>
+	</div>
+
+	<div class="col-12 m-0 p-0 mb-2 pe-md-2 d-flex justify-content-center justify-content-md-end">
+	    <button form="contactForm" type="reset" 
+		class="btn btn-outline-secondary me-2">Clear</button>
+	    <button form="contactForm" type="submit" 
+		class="btn btn-outline-success ms-2">Send</button>
+	</div>
+
+	<hr class="d-block d-md-none my-4" />
+    </div>
+</form>
+
+</div><div class="col-12 col-md-4 m-0 p-0 ps-md-4">
+    <div class="fatText">
+	eMail Us:
+    </div><div class="contactAddress">
+	<a href="mailto:info@digitalpaso.com">info@digitalpaso.com</a>
+    </div> <hr />
+    <div class="contactAddress">
+	Bla blabla, Palm Springs, CA zipcode
+    </div> <br />
+    <div class="contactAddress">
+	<a href="tel:+16509964571">Tel: (650) 996-4571</a>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    document.querySelector("#contactForm").addEventListener ("input", async (e) => {
+	try {
+	    document.querySelectorAll('.grecaptcha-badge')[0].style.visibility = "visible";
+	} catch (e) {
+	    console.log('Could not add input event listener.');
+	}
+    }, {once: 'true'});
+
+    document.querySelector("#contactForm").addEventListener ("submit", async (e) => {
+    try {
+        e.preventDefault();
+        const form = document.querySelector('#contactForm');
+        const formData = Object.fromEntries(new FormData(form));
+
+        const key = await fetch ('/reCaptchaKey', {
+            method: "POST",
+            body: JSON.stringify({}),
+            headers: { "Content-Type": "application/json"},
+            json: true
+        });
+        const siteKey = (await key.json()).siteKey;
+        grecaptcha.ready(async () => {
+            grecaptcha.execute(`${siteKey}`, {action: 'submit'}).then(async (token) => {
+                try {
+                    const json = JSON.stringify({...formData, token});
+                    const response = await fetch (form.action, {
+                        method: "POST",
+                        body : json,
+                        headers: { "Content-Type": "application/json" }
+                    });
+                    const data = await response.json();
+                    window.location.assign (data.redirect);
+                } catch (e) {
+                    window.location.assign ('/');
+                    return (e);
+                }
+            }).catch((error) => {
+                console.log('Error!', error);
+                window.location.assign ('/');
+            });
+        });
+    } catch (e) {
+        console.log(e);
+    }
+    });
+});
+</script>
+

@@ -1,0 +1,19 @@
+<script type="text/javascript">
+const toggleExpandCollaps = (id, innerDiv, outerDiv, butt) => {
+    const innerHeight = document.querySelector(`#${innerDiv}${id}`).getBoundingClientRect().height;
+    const outer = $(`#${outerDiv}${id}`);
+    let outerHeight = outer.height();
+    if (outerHeight===0) {
+        outer.animate ({height:innerHeight}, 400, 'swing', function(){});
+	if (butt)
+	    document.querySelector(`#${butt}${id}`).innerHTML = 'Show Less';
+    } else {
+        outer.animate ({height:0}, 400, 'swing', function(){});
+	if (butt)
+	    document.querySelector(`#${butt}${id}`).innerHTML = 'Show More';
+    }
+    if (butt) {
+	document.querySelector(`#${butt}${id}`).classList.toggle('active');
+    }
+}
+</script>

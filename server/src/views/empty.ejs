@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%- include ('./partials/header.ejs', {pageTitle: 'Not Found'}); %>
+
+</head>
+<body>
+<%- include ('./partials/navbar.ejs'); %>
+<%- include ('./partials/logo.ejs', {expired: 0}); %>
+<%- include ('./partials/containerTop.ejs'); %>
+
+<% if (!locals.message) { message="Something went wrong in unknown path" }; %>
+<h4 class="my-5 text-center"><%= message %></h4>
+
+<%- include ('./partials/goBackButton.ejs'); %>
+
+<%- include ('./partials/containerBottom.ejs'); %>
+<%- include ('./partials/footer.ejs'); %>
+<%- include ('./partials/singlePageHeight.ejs'); %>
+<%- include ('./partials/navbarShrink.ejs'); %>
+</body>
+</html>
+

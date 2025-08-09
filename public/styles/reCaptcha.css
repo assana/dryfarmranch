@@ -1,0 +1,21 @@
+.grecaptcha-badge  { visibility: hidden; }
+#recaptchaMessage {
+    color: var(--smallText-color);
+    font: 0.80rem/1.5rem SF-Text-Light, verdana, arial;
+    background: var(--very-light-grey);
+}
+.recapText {
+    border: 1px solid var(--medium-grey9);
+    border-radius: 8px;
+    width: auto;
+}
+#recaptchaMessage a,
+#recaptchaMessage a:link, #recaptchaMessage a:visited {
+    color: var(--theme-color);
+}
+#recaptchaMessage a:hover, #recaptchaMessage a:focus {
+    text-decoration: none;
+    color: var(--hover-color);
+}
+
+

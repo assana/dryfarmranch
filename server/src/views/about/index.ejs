@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%- include ('../partials/header.ejs', {pageTitle:'About Dry Farm Ranch'}); %>
+<%- include ('../partials/scrollPosition.ejs'); %>
+<style type="text/css">
+._grecaptcha-badge  { visibility: visible; }
+</style>
+</head>
+<body>
+<%- include ('../partials/navbar.ejs'); %>
+<%- include ('../partials/logo.ejs', {expired: 0}); %>
+<%- include ('../partials/containerTop.ejs'); %>
+
+<div class="row p-0 my-4 d-flex justify-content-center headlineRow headlineRowTheme">
+<div class="col-11 m-0 p-0">
+    <h4 class="h4Header">About Us</h4>
+    <div class="headline">
+	Something interesting about who we are...
+    </div>
+</div>
+</div>
+
+    <%- include ('./partials/chris.ejs', {employees}); %>
+    <%- include ('../partials/contactUs.ejs'); %>
+
+<%- include ('../partials/containerBottom.ejs'); %>
+<%- include ('../partials/footer.ejs'); %>
+<%- include ('../partials/singlePageHeight.ejs'); %>
+<%- include ('../partials/navbarShrink.ejs'); %>
+
+</body>
+</html>

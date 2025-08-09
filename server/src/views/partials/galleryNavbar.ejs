@@ -1,0 +1,24 @@
+<%- include ('analytics.ejs'); %>
+<nav id="mainNavBar" class="navbar sticky-top navbar-expand-lg data-bs-theme="dark" bg-dark">
+
+    <div id="navbarNav" class="collapse navbar-collapse 
+	align-items-center justify-content-start justify-content-lg-between noOutline">
+
+	<div class="navbar-nav align-items-lg-center text-center">
+	    <a class="nav-link" href="/">Home</a>
+	    <a class="nav-link" href="/feed">Feed</a>
+	</div>
+
+	<div id="burgerInsides" class="navbar-nav align-items-lg-center text-center">
+	    <a id="splitView" class="nav-link" target=_blank href="">
+		<%- include ('../gallery/SVG/splitView.svg') %>
+	    </a>
+	    <% if (locals.gallery && locals.gallery != undefined) { %> 
+		<a class="nav-link nav-photos" href='/gallery/<%=gallery%>'>Photos</a>
+	    <% } %>
+	    <% if (locals.writeup && locals.writeup != undefined) { %> 
+		<a class="nav-link nav-photos" href='/feed/<%=writeup%>'>Write Up</a>
+	    <% } %>
+	</div>	<!-- navbar-nav -->
+    </div> 	<!-- collaps navbar -->
+</nav>

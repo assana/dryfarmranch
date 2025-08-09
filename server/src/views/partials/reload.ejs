@@ -1,0 +1,15 @@
+<script type="text/javascript">
+window.onpopstate = function(event) {
+console.log('Hello from onpopstate!');
+    alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
+    window.location.reload(true);
+};
+
+window.addEventListener('popstate', e => {    
+    console.log(e.state);
+    location.reload();
+});
+
+</script>
+
+
