@@ -64,6 +64,10 @@ a.dropdown-toggle:link {
     height: auto;
 }
 
+.logoText {
+    font: 6.0rem/3.0rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
+}
+
 #mainNavBar .navbar-brand {
     margin: 0;
     font: 4.0rem/3.0rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
