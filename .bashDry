@@ -1,0 +1,43 @@
+#
+# DryFarmRanch Aliases
+#
+
+alias   digitalpaso-B='ssh -p 8000 assana@66.175.223.219'
+alias   digitalpaso='ssh -p 8000 assana@45.33.60.249'
+
+sscpDry () {
+    scp -P 8000 -r ~/Sites/DryFarmRanch/$* assana@173.255.223.254:~/public_html/DryFarmRanch/$*
+}
+
+rsscpDry () {
+    scp -P 8000 -r assana@173.255.223.254:~/public_html/DryFarmRanch/$* .
+}
+
+srsyncDry () {
+    rsync -e 'ssh -p 8000' -avlr --stats --progress \
+    --exclude '*.swp' \
+    --exclude Playground \
+    --exclude '.git*' \
+    --exclude Clients \
+    --exclude mongo-data \
+    --exclude Documents \
+    --exclude node_modules \
+    --exclude *.HEIC \
+    --exclude PhotoGallery \
+    --exclude Photos \
+    --exclude images-Fullsize \
+    --exclude LocalhostCertificates \
+    --exclude playground \
+    --exclude *.backup \
+    --exclude coverage \
+    ~/Sites/DryFarmRanch/$*/ assana@173.255.223.254:~/public_html/DryFarmRanch/$*
+}
+
+alias   version='git rev-list --count master >& ~/Sites/DryFarmRanch/server/src/version.txt'
+
+#ngrok http https://localhost:3030
+
+dryversion() {
+    /bin/rm -f ~/Sites/DryFarmRanch/server/src/version.txt
+    git rev-list --count main > ~/Sites/DryFarmRanch/server/src/version.txt
+}
