@@ -133,8 +133,6 @@ const sessionOptions = {
     resave:		false,
     saveUninitialized:	false, 
     cookie: { 
-	/* secure: true, */
-	//maxAge: tenSeconds,
 	maxAge: oneHour
     }, 
     store: mongoStore,
