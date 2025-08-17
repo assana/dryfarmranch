@@ -298,13 +298,13 @@ router.post('/saveDemoCookie', async function (req, res, next)
 {
     try {
 	if (req.body.secret === 'chelmo') {
-	    res.cookie('chelmo', req.body.secret, 
+	    res.cookie('DFR', req.body.secret, 
 		{ maxAge: 3600000, httpOnly: true });
 	    req.flash('success', 'Welcome to Dry Farm Ranch!');
 	    logUserAction ({action: 'cookie', username: 'Demo'});
 	}
 
-        return res.redirect('back');
+        return res.redirect('/');
     } catch (e) {
         console.log(e);
 	req.flash('error', e);

@@ -16,18 +16,15 @@ require("connect-flash");
 
 var router = express.Router({mergeParams: true, caseSensitive: true});
 
-/*
 router.use((req, res, next) => 
 {
-    if (req.cookies && req.cookies.DFR === "chelmo"){
-console.log(req.cookies);
+    if (req.cookies && req.cookies.DFR && (req.cookies.DFR === "chelmo")){
 	next();
     } else {
 	res.render("demo/login");
     }
 })
 
-*/
 
 // ====================
 // Routes
@@ -85,7 +82,7 @@ router.get("/colors", async function (req, res)
 router.get("/clearCookies", async function (req, res)
 { 
     try {
-	res.clearCookie ('JPPavingDemo');
+	res.clearCookie ('DFR');
 	req.flash('success', 'Cookies cleared.');
 	return res.redirect('/');
     } catch (e) {
