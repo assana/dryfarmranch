@@ -77,7 +77,9 @@ router.get("/", async function (req, res)
 	    req.isAuthenticated() || 
 	    (process.env.NODE_ENV === 'development')) {
 	    return res.render('landing/index');
-	} 
+	} else {
+	    return res.render('landing/index');
+	}
     } catch (e) {
 	console.log(e);
 	res.render('empty', {message: `/landing: ${e}`});
