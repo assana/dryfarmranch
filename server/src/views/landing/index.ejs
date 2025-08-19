@@ -13,20 +13,12 @@
 </head>
 
 <body>
-<% if (process.env.NODE_ENV === 'development'){ %>
-    <%- include ('../partials/navbar.ejs'); %>
-<% } else { %>
-    <%- include ('../partials/navbarSoon.ejs'); %>
-<% } %>
+<%- include ('../partials/navbar.ejs'); %>
 
-<div id="banner" class=""><img src="Assets/Banner.jpg" alt="Banner" /></div>
+    <div id="banner" class=""><img src="Assets/Banner.jpg" alt="Banner" /></div>
+
 <%- include ('../partials/containerTop.ejs'); %>
-
-<% if (process.env.NODE_ENV === 'development'){ %>
-    <%- include ('partials/writeup'); %>
-<% } else { %>
-    <%- include ('partials/soon'); %>
-<% } %>
+<%- include ('partials/writeup'); %>
 
 <%- include ('../partials/contactUs.ejs'); %>
 <%- include ('../partials/containerBottom.ejs'); %>
