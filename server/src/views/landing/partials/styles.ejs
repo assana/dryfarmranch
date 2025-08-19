@@ -43,11 +43,30 @@
     color: var(--theme-color-denim);
 }
 
+
 .keyFeatures {
     border: 1px solid var(--theme-color-leather);
-    padding: 2rem;
+    padding: 2rem 0 2rem 0;
     background-color: var(--keyFeatures-background);
-    
+}
+
+.keyFeatures .row {
+    border-top: 1px solid var(--light-grey);
+    margin: 
+}
+
+.keyFeatures .row:first-child {
+    border-top: 0;
+}
+
+.keyFeatures .row:nth-child(even) {
+    background-color: var(--body-background);
+    background-color: var(--keyFeatures-stripe-background);
+}
+
+section .keyFeatures {
+    margin: 1rem 5rem 3rem 5rem;
+    padding: 1rem 0;
 }
 
 .keyFeatures h5 {

@@ -39,10 +39,12 @@
     --bg-color7:	rgb(249, 253, 243);
 --bg-color7:	rgb(255, 250, 230);
 --bg-color8:	rgb(255, 255, 240);
+--bg-color9:	rgb(249, 248, 220);
 
     --body-background:	var(--bg-color7);
     --flyer-background:	var(--bg-color7);
     --keyFeatures-background: var(--bg-color8);
+    --keyFeatures-stripe-background: var(--bg-color5);
     --navbar-background:var(--body-background);	/* dirt color */
     --navbar-background:rgba(184, 152, 132, 0.70);
     --theme-color:	var(--theme-color-leather);	/* dirt color */
