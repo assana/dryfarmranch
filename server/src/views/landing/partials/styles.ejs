@@ -20,9 +20,8 @@
 }
 
 .titleTagline {
-    font: 1.5rem/1.0rem SF-Ultralight-Display, SF-Light, SF-Regular, arial, verdana;
-    font-variant-caps:small-caps !important;
-    color: var(--medium-grey3) !important;
+    font: 2.0rem/2.5rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
+    color: var(--theme-color-denim);
 }
 
 .flyer {
@@ -31,15 +30,20 @@
     margin: 2rem 1rem;
 }
 
+.fancyCircl:after {
+    font: 2.0rem/2.0rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
+    content:'\2116';
+}
+
 .vision {
-    border: 2px solid var(--medium-grey7);
+    border: 1px solid var(--medium-grey7);
     background-color: white;
 }
 
 .sectionTitle {
     font: 2.0rem/2.5rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
     font: 1.6rem/2.5rem SF-Light, arial, verdana;
-    margin: 4rem 0 0 0;
+    margin: 1rem 0 0 0;
     color: var(--theme-color-denim);
 }
 
@@ -73,9 +77,6 @@ section .keyFeatures {
     color: var(--theme-color-denim);
 }
 
-.section {
-}
-
 h4 {
     margin: 4rem 0 0 0;
     color: #2355c0;
@@ -104,17 +105,27 @@ hr {
     }
     .sectionTitle {
 	font: 1.4rem/2.0rem SF-Light, arial, verdana;
-	margin: 3rem 0 0 0;
+	margin: 1rem 0 0 0;
 	color: var(--theme-color-denim);
     }
+    section .keyFeatures {
+	margin: 0;
+	padding: 0.5rem;
+    }
+
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .sectionTitle {
 	font: 1.4rem/2.0rem SF-Light, arial, verdana;
-	margin: 3rem 0 0 0;
+	margin: 1rem 0 0 0;
 	color: var(--theme-color-denim);
+    }
+
+    section .keyFeatures {
+	margin: 0;
+	padding: 0.75rem;
     }
 }
 
@@ -122,7 +133,14 @@ hr {
 @media (min-width: 768px) and (max-width: 991.98px) {
     .logoText {
 	font: 4.0rem/3.0rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
+	color: var(--theme-color-denim);
     }
+
+    section .keyFeatures {
+	margin: 1rem 2rem;
+	padding: 1rem;
+    }
+
 }
 
 /* Large devices (desktops, 992px and up) */
