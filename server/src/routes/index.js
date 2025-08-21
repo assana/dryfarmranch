@@ -70,32 +70,13 @@ console.log('[0] follColor in locals', req.app.locals.fillColor);
 // Landing pages
 //
 
-router.get("/", async function (req, res)
+router.get("/", middleware.cookieCurtain, async function (req, res)
 { 
-console.log("in landing.");
     try {
-	if ((req.cookies && req.cookies.DFR === "chelmo")
-	    || req.isAuthenticated()
-	    //|| (process.env.NODE_ENV === 'development')
-	    ) {
-	    return res.render('landing/index');
-	} else {
-	    return res.redirect('/soon');
-	}
+	return res.render('landing/index');
     } catch (e) {
 	console.log(e);
 	res.render('empty', {message: `/landing: ${e}`});
-    }
-
-}); 
-
-router.get("/soon", async function (req, res)
-{ 
-    try {
-	return res.render('landing/soon', {});
-    } catch (e) {
-	console.log(e);
-	res.render('empty');
     }
 
 }); 
@@ -123,19 +104,12 @@ const shufflePhotos = (length) =>
 // Contact form and button
 // =======================
 
-router.get("/contact", async (req, res) => { 
+router.get("/contact", middleware.cookieCurtain, async (req, res) => { 
     try {
 	res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
 	res.setHeader("Expires", "0");
 
-	if ((req.cookies && req.cookies.DFR === "chelmo")
-	    || req.isAuthenticated()
-	    //|| (process.env.NODE_ENV === 'development')
-	    ) {
-	    return res.render("contact/index");
-	} else {
-	    return res.redirect('/soon');
-	}
+	return res.render("contact/index");
     } catch (e) {
 	console.log(e);
 	req.flash("error", e);
@@ -279,7 +253,7 @@ router.get("/login", saveReturnTo, function (req, res)
 router.post('/saveDemoCookie', async function (req, res, next)
 {
     try {
-	if (req.body.secret === 'chelmo') {
+	if (req.body.secret === 'Cookie') {
 	    res.cookie('DFR', req.body.secret, 
 		{ maxAge: 3600000, httpOnly: true });
 	    req.flash('success', 'Welcome to Dry Farm Ranch!');

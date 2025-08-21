@@ -18,7 +18,7 @@ var router = express.Router({mergeParams: true, caseSensitive: true});
 
 router.use((req, res, next) => 
 {
-    if (req.cookies && req.cookies.DFR && (req.cookies.DFR === "chelmo")){
+    if (req.cookies && req.cookies.DFR && (req.cookies.DFR === "Cookie")){
 	next();
     } else {
 	res.render("demo/login");

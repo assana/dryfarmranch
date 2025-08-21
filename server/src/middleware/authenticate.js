@@ -9,6 +9,15 @@ var {User} = require ("../models/user.js");
 
 var middlewareObj = {};
 
+middlewareObj.cookieCurtain = function (req, res, next)
+{
+    if (req.cookies && req.cookies.DFR && (req.cookies.DFR === "Cookie")){
+        next();
+    } else {
+        return res.render('landing/soon', {});
+    }
+}
+
 middlewareObj.isLoggedIn = function (req, res, next)
 {
     if (req.isAuthenticated()){

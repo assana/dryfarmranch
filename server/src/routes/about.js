@@ -33,17 +33,10 @@ const saveReturnTo = (req, res, next) => {
 // Landing page
 //
 
-router.get("/", async function (req, res)
+router.get("/", middleware.cookieCurtain, async function (req, res)
 { 
     try {
-	if ((req.cookies && req.cookies.DFR === "chelmo")
-	    || req.isAuthenticated()
-	    //|| (process.env.NODE_ENV === 'development')
-	    ) {
-	    return res.render('about');
-	} else {
-	    return res.redirect('/soon');
-	}
+	return res.render('about');
     } catch (e) {
 	console.log(e);
 	res.render('empty', {message: e.message});

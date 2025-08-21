@@ -6,14 +6,18 @@
 </head>
 
 <body>
-<%- include ('./partials/navbar.ejs') %>
+<% if (process.env.NODE_ENV === 'development'){ %>
+<%- include ('./partials/navbar.ejs') %> 
+<% } %>
 <%- include ('./partials/containerTop.ejs'); %>
 
 <h2 class="p-0 mt-5 text-center">Page not found!</h2>
 
 <%- include ('./partials/contactUs.ejs'); %>
 <%- include ('./partials/containerBottom.ejs'); %>
-<%- include ('./partials/footer.ejs'); %>
+<% if (process.env.NODE_ENV === 'development'){ %>
+    <%- include ('./partials/footer.ejs');  %>
+<% } %>
 <%- include ('./partials/singlePageHeight.ejs'); %>
 <%- include ('./partials/navbarShrink.ejs'); %>
 </body>
