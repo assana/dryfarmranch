@@ -21,7 +21,7 @@ router.use((req, res, next) =>
     if (req.cookies && req.cookies.DFR && (req.cookies.DFR === "Cookie")){
 	next();
     } else {
-	res.render("demo/login");
+	return res.render('landing/soon', {});
     }
 })
 
