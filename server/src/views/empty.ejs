@@ -5,7 +5,9 @@
 
 </head>
 <body>
+<% if (process.env.NODE_ENV === 'development'){ %>
 <%- include ('./partials/navbar.ejs'); %>
+<% } %>
 <%- include ('./partials/logo.ejs', {expired: 0}); %>
 <%- include ('./partials/containerTop.ejs'); %>
 
@@ -15,7 +17,9 @@
 <%- include ('./partials/goBackButton.ejs'); %>
 
 <%- include ('./partials/containerBottom.ejs'); %>
+<% if (process.env.NODE_ENV === 'development'){ %>
 <%- include ('./partials/footer.ejs'); %>
+<% } %>
 <%- include ('./partials/singlePageHeight.ejs'); %>
 <%- include ('./partials/navbarShrink.ejs'); %>
 </body>
