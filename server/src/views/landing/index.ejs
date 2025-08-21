@@ -21,7 +21,9 @@
 
 <%- include ('../partials/contactUs.ejs'); %>
 <%- include ('../partials/containerBottom.ejs'); %>
-<%- include ('../partials/footer.ejs'); %>
+<% if (process.env.NODE_ENV === 'development'){ %>
+    <%- include ('../partials/footer.ejs'); %>
+<% } %>
 <%- include ('../partials/singlePageHeight.ejs'); %>
 <%- include ('../partials/navbarShrink.ejs'); %>
 </body>
@@ -29,3 +31,4 @@
 <%- include ('../partials/reCaptchaHomepage.ejs'); %>
 
 </html>
+

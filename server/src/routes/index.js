@@ -67,18 +67,20 @@ console.log('[0] follColor in locals', req.app.locals.fillColor);
 });
 
 //
-// Landing page
+// Landing pages
 //
 
 router.get("/", async function (req, res)
 { 
+console.log("in landing.");
     try {
-	if ((req.cookies && req.cookies.DFR === "chelmo") ||
-	    req.isAuthenticated() || 
-	    (process.env.NODE_ENV === 'development')) {
+	if ((req.cookies && req.cookies.DFR === "chelmo")
+	    || req.isAuthenticated()
+	    //|| (process.env.NODE_ENV === 'development')
+	    ) {
 	    return res.render('landing/index');
 	} else {
-	    return res.render('landing/index');
+	    return res.redirect('/soon');
 	}
     } catch (e) {
 	console.log(e);
@@ -87,29 +89,10 @@ router.get("/", async function (req, res)
 
 }); 
 
-router.get('/bodyImage', async (req, res) => {
-    try {
-	const imagePath = `${__dirname}/../../assets/Photos/People/${req.query.img}`;
-	const dataBuffer = await fs.readFileSync(imagePath);
-
-	const buffer = await sharp(dataBuffer)
-            .rotate()
-            .resize({width: 1600, height: 1600})
-            .jpeg()
-            .toBuffer();
-
-        res.set('Content-Type', 'image/jpg');
-	res.status(200).send(buffer);
-    } catch (e) {
-	console.log(e);
-        res.status(404).send('Something went wrong');
-    }
-});
-
-router.get("/backsoon", async function (req, res)
+router.get("/soon", async function (req, res)
 { 
     try {
-	return res.render('backSoon', {});
+	return res.render('landing/soon', {});
     } catch (e) {
 	console.log(e);
 	res.render('empty');
@@ -117,17 +100,6 @@ router.get("/backsoon", async function (req, res)
 
 }); 
 
-router.get("/portfolio", async function (req, res)
-{
-    try {
-	const services = await Service.find({}).sort({order: 1});
-	const info = await portfolioThumbnails ("portfolio");
-        res.render('portfolio/index', {services, info});
-    } catch (e) {
-        console.log(e);
-        res.render('empty', {message:'something went wrong.'});
-    }
-});
 
 const shufflePhotos = (length) =>
 {
@@ -225,6 +197,7 @@ router.post("/homepage", async (req, res) => {
         res.status(500).redirect('/');
     }
 }); 
+
 router.post("/contact", async (req, res) => { 
 
     try {
