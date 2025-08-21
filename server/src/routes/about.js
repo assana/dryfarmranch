@@ -36,29 +36,17 @@ const saveReturnTo = (req, res, next) => {
 router.get("/", async function (req, res)
 { 
     try {
-	let findOptions = {
-	    /*title: {$nin:['STAFF', 'SUPERVISOR']},*/
-	    title: {$in:['UBER', 'ADMIN']},
-	};
-	let selectOptions = 'title firstname lastname _id bio';
-
-	const employees = await User.find(findOptions).select(selectOptions);
-	return res.render('about', {employees});
+	if ((req.cookies && req.cookies.DFR === "chelmo")
+	    || req.isAuthenticated()
+	    //|| (process.env.NODE_ENV === 'development')
+	    ) {
+	    return res.render('about');
+	} else {
+	    return res.redirect('/soon');
+	}
     } catch (e) {
 	console.log(e);
 	res.render('empty', {message: e.message});
-    }
-
-}); 
-
-router.get("/chris", async function (req, res)
-{ 
-    try {
-	const chris = User.find({name: 'Chris'});
-	return res.render('about/chris', {});
-    } catch (e) {
-	console.log(e);
-	res.render('empty');
     }
 
 }); 

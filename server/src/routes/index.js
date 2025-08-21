@@ -128,7 +128,14 @@ router.get("/contact", async (req, res) => {
 	res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
 	res.setHeader("Expires", "0");
 
-	res.render("contact/index");
+	if ((req.cookies && req.cookies.DFR === "chelmo")
+	    || req.isAuthenticated()
+	    //|| (process.env.NODE_ENV === 'development')
+	    ) {
+	    return res.render("contact/index");
+	} else {
+	    return res.redirect('/soon');
+	}
     } catch (e) {
 	console.log(e);
 	req.flash("error", e);
