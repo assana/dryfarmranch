@@ -4,9 +4,12 @@
 <%- include ('../partials/header.ejs', {pageTitle:'Contact Us'}); %>
 <script type="text/javascript" src="/libs/validator.min.js"></script>
 
+<%- include ('../styles.ejs'); %>
 <style type="text/css">
 .grecaptcha-badge  { visibility: visible; }
+.vert {border-right: 1px solid var(--medium-grey9);}
 </style>
+
 </head>
 
 <body>
@@ -14,47 +17,67 @@
 <%- include ('../partials/logo.ejs', {expired: 0}); %>
 <%- include ('../partials/containerTop.ejs'); %>
 
-<div class="formCard m-0 p-0 m-2">
-<div class="row justify-content-center m-0 p-0">
+<section id="nextSteps">
+<div class="sectionTitle d-flex justify-content-center justify-content-md-start">
+    <span class="HRSS_ss05">Contact Us</span></div>
+<hr />
 
+<p>
+    Experience the beauty and potential of Dry Farm Ranch firsthand.
+    Schedule a Site Visit.</span>
+</p>
+</section>
+
+<div class="vision m-0 p-0 m-2">
+<div class="row justify-content-between m-0 p-0">
+
+<div class="col-12 col-md-3 d-flex pt-3">
+<p><span class="fw-bold">email</span><br />
+    <a href="mailto:info@dryfarmranch.com
+        ?subject=Enquiry%20about%20DFR" target="_top">
+        info@DryFarmRanch.com</a>
+</p>
+</div>	<!-- email column -->
+
+<div class="col-0 col-md-1 vert"></div>
+
+<div class="col-12 col-md-8"> <!-- Form column -->
 <form id="contactForm" class="mt-4" action="/contact" method="POST">
 <div class="row m-0 p-0 mt-2">
     <label class="d-none d-md-block col-12 col-md-3 m-0 mt-2 px-0 px-md-2 col-form-label text-start text-md-end" for="first">*Name</label>
-        <div class="col-12 col-md-8 m-0 p-0 mt-2">
+        <div class="col-12 col-md-9 m-0 p-0 mt-2">
             <input class="form-control" type="text"
                 name="customerName" required autofocus placeholder="Customer Name" >
         </div>
     <label class="d-none d-md-block col-12 col-md-3 m-0 mt-2 px-0 px-md-2 col-form-label text-start text-md-end" for="email">*E-mail</label>
-        <div class="col-12 col-md-8 m-0 p-0 mt-2">
+        <div class="col-12 col-md-9 m-0 p-0 mt-2">
             <input class="form-control" type="email"
                 name="email" required placeholder="email">
         </div>
     <label class="d-none d-md-block col-12 col-md-3 m-0 mt-2 px-0 px-md-2 col-form-label text-start text-md-end" for="phone">*Phone #</label>
-        <div class="col-12 col-md-8 m-0 p-0 mt-2">
+        <div class="col-12 col-md-9 m-0 p-0 mt-2">
             <input class="form-control m-0" type="tel" minlength=10 name="phone" required
                 placeholder="(###) ###-####">
         </div>
     <label class="d-none d-md-block col-12 col-md-3 m-0 mt-2 px-0 px-md-2 col-form-label text-start text-md-end" for="details">*Comments</label>
-        <div class="col-12 col-md-8 m-0 p-0 mt-2">
+        <div class="col-12 col-md-9 m-0 p-0 mt-2">
         <textarea class="form-control" name="details" required
-            placeholder="How can we help?" rows="10"></textarea>
+            placeholder="How can we help?" rows="4"></textarea>
 	</div>
 </div>
 </form>
 
-<div class="d-flex justify-content-between align-items-center">
-    <div class="col py-4">
+<div class="d-flex justify-content-end align-items-end py-4">
         <%- include ('../partials/goBackButton.ejs'); %>
-    </div><div class="col d-flex justify-content-end py-4">
         <button form="contactForm" type="reset" 
-	    class="btn btn-outline-secondary me-2">Clear</button>
+	    class="btn btn-outline-secondary mx-2">Clear</button>
         <button form="contactForm" type="submit" 
-	    class="btn btn-outline-success ms-2">Send</button>
-    </div>
+	    class="btn btn-outline-success me-2">Send</button>
 </div>
+</div> <!-- form column -->
 
-</div>
-</div>
+</div> <!-- white box row -->
+</div> <!-- Form card -->
 
 <%- include ('../partials/containerBottom.ejs'); %>
 <%- include ('../partials/footer.ejs'); %>
