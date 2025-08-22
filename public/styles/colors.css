@@ -24,30 +24,28 @@
     --visited:		#e5fff2;
     --notVisited:	#ffe5f2;
 
-/*
---bg-color0:	rgb(209, 213, 203);
-*/
-    --bg-color0:	rgb(209, 213, 203);
---bg-color0:	#CBB2A0;
---bg-color0:	rgba(184, 152, 132, 0.70);
-    --bg-color1:	rgb(222, 220, 219);
+    --bg-color0:	rgba(184, 152, 132, 0.70);
     --bg-color2:	rgb(216, 217, 215);
-    --bg-color3:	rgb(194, 196, 182);
-    --bg-color4:	rgb(177, 184, 186);
-    --bg-color5:	rgb(229, 233, 223);
+    --maeve:		rgba(194, 196, 182, 0.70);
+    --light-maeve:	rgba(229, 233, 223, 0.70);
+    --light-maeve:	rgba(229, 233, 223, 1.00);
+    --bg-colorA:	rgb(249, 253, 243);
+    --bg-color5:        rgb(229, 233, 223);
     --bg-color6:	rgb(239, 243, 233);
-    --bg-color7:	rgb(249, 253, 243);
---bg-color7:	rgb(255, 250, 230);
---bg-color8:	rgb(255, 255, 240);
---bg-color9:	rgb(249, 248, 220);
+    --bg-color7:	rgb(255, 250, 230);
+    --bg-color8:	rgb(255, 255, 240);
+    --bg-color9:	rgb(249, 248, 220);
 
-    --body-background:	var(--bg-color7);
-    --flyer-background:	var(--bg-color7);
-    --keyFeatures-background: var(--bg-color8);
+    --navbar-bg0:rgba(194, 196, 182, 0.70);	/* Maeve */
+    --navbar-bg1:rgba(229, 233, 223, 0.70);
+    --navbar-bg2:rgba(184, 152, 132, 0.70);	/* Reddish */
+
+    --body-background:		var(--bg-color7);
+    --flyer-background:		var(--bg-color7);
+    --navbar-background:	var(--navbar-bg0);
+    --theme-color:		var(--theme-color-denim);	/* dirt color */
+    --keyFeatures-background: 	var(--bg-color8);
     --keyFeatures-stripe-background: var(--bg-color5);
-    --navbar-background:var(--body-background);	/* dirt color */
-    --navbar-background:rgba(184, 152, 132, 0.70);
-    --theme-color:	var(--theme-color-leather);	/* dirt color */
 }
 
 

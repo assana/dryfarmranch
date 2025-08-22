@@ -66,12 +66,12 @@ a.dropdown-toggle:link {
 
 .mobileLogoText {
     font: 2.0rem/3.0rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
-    color: var(--theme-color-denim);
+    color: var(--theme-color);
 }
 
 .logoText {
     font: 6.0rem/3.0rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
-    color: var(--theme-color-denim);
+    color: var(--theme-color);
 }
 
 #mainNavBar .navbar-brand {

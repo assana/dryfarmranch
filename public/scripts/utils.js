@@ -293,6 +293,25 @@ const noSubmitOnEnter = (e) => {
     return true;
 }
 
+const setColor = (color, index, tag, label) =>
+{
+const property = `--${tag}`;
+
+    if (color != `var(${property})`) {
+        const oldColor =
+            getComputedStyle(document.documentElement).getPropertyValue(property);
+        document.documentElement.style.setProperty(`${property}`, color);
+    }
+    const elements = document.querySelectorAll(label);
+    elements.forEach((e, i) => {
+        if (i === index)
+            e.innerHTML = '*';
+        else
+            e.innerHTML = '';
+    });
+    return index;
+}
+
 
 const setThemeColor = (color, index) =>
 {
@@ -348,5 +367,4 @@ const setBackgroundColor = (color, index) =>
     });
     return index;
 }
-
 

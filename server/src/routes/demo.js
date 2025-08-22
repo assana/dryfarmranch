@@ -57,23 +57,27 @@ router.get("/colors", async function (req, res)
 {
     try {
 	const backgrounds = [
-	    {bg: 'var(--bg-color5)', name:'5'},
-	    {bg: 'var(--bg-color6)', name:'6'},
-	    {bg: 'var(--bg-color0)', name:'0'},
-	    {bg: 'var(--bg-color2)', name:'2'},
-/*
-	    {bg: 'var(--bg-color3)', name:'3'},
-	    {bg: 'var(--bg-color1)', name:'1'},
-	    {bg: 'var(--bg-color4)', name:'4'},
-*/
+	    {color: 'var(--bg-color7)', name:'7'},
+	    {color: 'var(--bg-color2)', name:'2'},
+	    {color: 'var(--light-maeve)', name:'Light Maeve'},
+	    {color: 'var(--bg-colorA)', name:'A'},
+	    {color: 'var(--bg-color6)', name:'6'},
+	    {color: 'var(--bg-color8)', name:'8'},
+	    {color: 'var(--bg-color9)', name:'9'},
 	];
 
-	const logo = [
-	    {bg: 'var(--theme-color)',   name:'Leather'},
-	    {bg: 'var(--theme-color-denim)', name:'Denim'},
+	const navbars = [
+	    {color: 'var(--navbar-bg0)', name:'Maeve'},
+	    {color: 'var(--navbar-bg1)', name:'1'},
+	    {color: 'var(--navbar-bg2)', name:'2'},
 	];
 
-	return res.render('demo/colors', {backgrounds, logo});
+	const logos = [
+	    {color: 'var(--theme-color-denim)', name:'Denim'},
+	    {color: 'var(--theme-color-leather)',   name:'Leather'},
+	];
+
+	return res.render('demo/colors', {backgrounds, navbars, logos});
     } catch (e) {
 	res.redirect('/');
     }

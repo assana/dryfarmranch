@@ -9,12 +9,21 @@
         lastIndex = setBackgroundColor(bg, index);
         lastIndex = setNavbarColor(bg, index);
     }
+    const updateLogoColor = (c, index) => {
+	lastIndex = setThemeColor(c, index);
+    }
 </script>
 
+<%- include ('../styles.ejs'); %>
 <style type="text/css">
+    .currentThemeColor,
     .currentBgColor {
 	display: inline;
     }
+    .currentLogoColor {
+	color: var(--theme-color) !important;
+    }
+
     .swatch {
 	border: 1px solid grey;
     }
@@ -22,10 +31,13 @@
     .btn {
 	width: 100%;
     }
-    .serviceCardTrans {
-	border: 1px solid var(--border-color);
-	background: var(--body-background);
+
+    .navbarTrans {
+	transform: scale(0.50, 0.50); 
+	transform-origin: top left;
     }
+    .flipX                  { transform: rotateY(180deg); }
+    .flipY                  { transform: rotateX(180deg); }
 
 </style>
 
@@ -35,42 +47,97 @@
 <%- include ('../partials/navbar.ejs'); %>
 <%- include ('../partials/containerTop.ejs'); %>
 
+<div class="sectionTitle d-flex justify-content-center justify-content-md-start">
+    <span class="HRSS_ss05">Opportunity for Luxury Home Developers</span></div>
+<hr />
+
+<p>
+Bacon ipsum dolor amet hamburger drumstick excepteur, non turkey beef
+ribs est biltong. Nulla brisket swine meatball, qui tail officia
+voluptate non. Buffalo commodo bresaola pork belly in voluptate ut
+laborum. Chuck in deserunt aliquip dolor pariatur boudin frankfurter
+hamburger eiusmod minim pork laboris.
+</p>
+
+<h5>Key Features</h5>
+<section class="section keyFeatures"> <!-- Key Features -->
+<section class="section my-3"> <!-- Why DFR -->
+
+<div class="row py-2 mx-0">
+<div class="col-4 col-lg-3 fw-bold text-end">Bacon &amp; Pork</div>
+<div class="col col-lg-7">
+Ribeye eiusmod excepteur cupim fugiat pastrami ad rump tempor tenderloin qui. 
+Brisket adipisicing ea, consectetur chislic fugiat irure sirloin flank jerky capicola.
+</div>
+</div>
+
+<div class="row py-2 mx-0">
+<div class="col-4 col-lg-3 fw-bold text-end">Ham</div>
+<div class="col col-lg-7">
+Brisket adipisicing ea, consectetur chislic fugiat irure sirloin flank jerky capicola.
+</div>
+</div>
+
+<div class="row py-2 mx-0">
+<div class="col-4 col-lg-3 fw-bold text-end">Ribs Andouille</div>
+<div class="col col-lg-7">
+Pastrami ground round cow consectetur labore. Qui voluptate kevin enim.
+</div>
+</div>
+
+<div class="vision m-0 p-4 m-md-4 p-md-4">
+<span class="fw-bold">Vision</span><br />
+Sirloin bacon reprehenderit t-bone strip steak. Meatloaf duis ullamco
+consectetur tempor landjaeger sint cow.
+</div>
+
+</section> <!-- Why DFR -->
+</section> <!-- Key Features -->
+
 <h4 class="m-0 p-0 d-flex justify-content-center justify-content-md-start mt-4">
-    Backgrounds</h4>
+    Background</h4>
 <div class="row p-0 m-0 align-items-between">
 <% backgrounds.forEach((bg, index) => { %>
     <div class="col-3 text-center">
 	<button class="my-3 btn btn-lg btn-light btn-outline-secondary"
-	    style="background: <%=bg.bg%>"
-	    onclick="updateColor('<%=bg.bg%>', <%=index%>);">
-	    <%=bg.name%><div class='text-center currentBgColor'><%if(index===3){%>*<%}%></div>
+	    style="background: <%=bg.color%>"
+	    onclick="setColor('<%=bg.color%>', <%=index%>, 
+		'<%="body-background"%>', '.currentBg');">
+	    <%=bg.name%><div class='text-center d-inline currentBg'>
+		<%if(index===0){%>*<%}%></div>
 	</button>
     </div>
 <% }); %>
 
-<div class="fullPage row m-0 justify-content-center">
-    <div class="col-12 d-flex justify-content-center my-5 py-3">
-	<div id="mainLogo" class="d-flex align-items-center justify-content-center" >
-	    <div class="logoText text-center">
-		<span class="HRSS_ss05" style="color: var(--theme-color-leather)">
-		    DRY FArm raNch</span>
-	    </div>
-	</div>
+<h4 class="m-0 p-0 d-flex justify-content-center justify-content-md-start mt-4">
+    Navbar</h4>
+<div class="row p-0 m-0 align-items-between">
+<% navbars.forEach((nav, index) => { %>
+    <div class="col-3 text-center">
+	<button class="text-grey my-3 btn btn-lg btn-light btn-outline-secondary"
+	    style="background: <%=nav.color%>"
+	    onclick="setColor('<%=nav.color%>', <%=index%>, 
+		'<%="navbar-background"%>', '.currentNav');">
+	    <%=nav.name%><div class='text-center d-inline currentNav'>
+		<%if(index===0){%>*<%}%></div>
+	</button>
     </div>
-    <div class="col-12 d-flex justify-content-center my-5 py-3">
-	<div id="mainLogoDenim" class="d-flex align-items-center justify-content-center" >
-	    <div class="logoText text-center">
-		<span class="HRSS_ss05">DRY FArm raNch</span>
-	    </div>
-	</div>
-    </div><div class="col-12 d-flex justify-content-center mt-5">
-    </div>
-</div>      <!-- row -->
+<% }); %>
 
-<div class="col col-sm-2 d-flex align-items-end justify-content-center">
-        <div class=""> 
-	</div>
-</div>
+<h4 class="m-0 p-0 d-flex justify-content-center justify-content-md-start mt-4">
+    Logo</h4>
+<div class="row p-0 m-0 align-items-between">
+<% logos.forEach((logo, index) => { %>
+    <div class="col-3 text-center">
+	<button class="text-white my-3 btn btn-lg btn-light btn-outline-secondary"
+	    style="background: <%=logo.color%>"
+	    onclick="setColor('<%=logo.color%>', <%=index%>, 
+		'<%="theme-color"%>', '.currentLogo');">
+	    <%=logo.name%><div class='text-center d-inline currentLogo'>
+		<%if(index===0){%>*<%}%></div>
+	</button>
+    </div>
+<% }); %>
 
 <%- include ('../partials/containerBottom.ejs'); %>
 <%- include ('../partials/footer.ejs'); %>
