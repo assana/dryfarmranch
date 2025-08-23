@@ -107,13 +107,6 @@ hr {
     .title {
 	font: 1.0rem/1.0rem SF-Ultralight-Display, SF-Light, SF-Regular, arial, verdana;
     }
-}
-
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-    .title {
-	font: 3.0rem/1.0rem SF-Ultralight-Display, SF-Light, SF-Regular, arial, verdana;
-    }
     .sectionTitle {
 	font: 1.4rem/2.0rem SF-Light, arial, verdana;
 	margin: 1rem 0 0 0;
@@ -123,14 +116,49 @@ hr {
 	margin: 0;
 	padding: 0.5rem;
     }
+    .titleTagline {
+	font: 1.2rem/2.0rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
+	color: var(--theme-color);
+    }
+
+
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .title {
+	font: 2.0rem/1.0rem SF-Ultralight-Display, SF-Light, SF-Regular, arial, verdana;
+    }
+    .sectionTitle {
+	font: 1.4rem/2.0rem SF-Light, arial, verdana;
+	margin: 1rem 0 0 0;
+	color: var(--theme-color);
+    }
+    .titleTagline {
+	font: 1.4rem/2.0rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
+	color: var(--theme-color);
+    }
+
+    section .keyFeatures {
+	margin: 0;
+	padding: 0.5rem;
+    }
 
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
+    .title {
+	font: 3.0rem/1.0rem SF-Ultralight-Display, SF-Light, SF-Regular, arial, verdana;
+    }
     .sectionTitle {
 	font: 1.4rem/2.0rem SF-Light, arial, verdana;
 	margin: 1rem 0 0 0;
+	color: var(--theme-color);
+    }
+
+    .titleTagline {
+	font: 1.6rem/2.0rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
 	color: var(--theme-color);
     }
 
@@ -144,6 +172,11 @@ hr {
 @media (min-width: 768px) and (max-width: 991.98px) {
     .logoText {
 	font: 4.0rem/3.0rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
+	color: var(--theme-color);
+    }
+
+    .titleTagline {
+	font: 1.8rem/2.0rem HanleyRough-SlimSerif, SF-Light, arial, verdana;
 	color: var(--theme-color);
     }
 
