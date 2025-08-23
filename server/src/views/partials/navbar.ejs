@@ -22,8 +22,9 @@
     align-items-start justify-content-start justify-content-md-between noOutline">
 
     <div class="navbar-nav align-items-md-start text-center">
-	<a class="nav-link d-flex justify-self-start ps-0" href="/">Home</a>
-	<a class="nav-link" href="/about">About</a>
+	<a class="nav-link d-flex justify-content-start ps-0" href="/">Home</a>
+	<a class="nav-link d-flex justify-content-start ps-0" 
+	    href="/about">About</a>
     </div>
 
     <div id="brand" class="d-none d-md-flex align-items-center justify-content-center">
@@ -34,8 +35,8 @@
 	</div>
     </div>
 
-    <div class="navbar-nav align-items-md-start text-center">
-	<div class="nav-link hidden">Empty</div>
+    <div class="navbar-nav d-flex align-items-md-start text-center">
+	<div class="nav-link d-none d_md-flex hidden">Empty</div>
 
 	<% if (currentUser || (cookie.DFR === 'Cookie')) { %>
 	    <%- include ('./navbarItems/demo.ejs') %>
