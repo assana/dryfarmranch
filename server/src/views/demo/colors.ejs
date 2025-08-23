@@ -96,9 +96,10 @@ consectetur tempor landjaeger sint cow.
 
 <h4 class="m-0 p-0 d-flex justify-content-center justify-content-md-start mt-4">
     Background</h4>
-<div class="row p-0 m-0 align-items-between">
+<div class="row p-0 m-0 d-flex align-items-between 
+    justify-content-center justify-content-sm-around justify-content-md-start">
 <% backgrounds.forEach((bg, index) => { %>
-    <div class="col-3 text-center">
+    <div class="col-5 col-sm-4 col-md-3 text-center">
 	<button class="my-3 btn btn-lg btn-light btn-outline-secondary"
 	    style="background: <%=bg.color%>"
 	    onclick="setColor('<%=bg.color%>', <%=index%>, 
@@ -111,9 +112,10 @@ consectetur tempor landjaeger sint cow.
 
 <h4 class="m-0 p-0 d-flex justify-content-center justify-content-md-start mt-4">
     Navbar</h4>
-<div class="row p-0 m-0 align-items-between">
+<div class="row p-0 m-0 d-flex align-items-between 
+    justify-content-center justify-content-sm-around justify-content-md-start">
 <% navbars.forEach((nav, index) => { %>
-    <div class="col-3 text-center">
+    <div class="col-5 col-md-3 text-center">
 	<button class="text-grey my-3 btn btn-lg btn-light btn-outline-secondary"
 	    style="background: <%=nav.color%>"
 	    onclick="setColor('<%=nav.color%>', <%=index%>, 
@@ -126,9 +128,10 @@ consectetur tempor landjaeger sint cow.
 
 <h4 class="m-0 p-0 d-flex justify-content-center justify-content-md-start mt-4">
     Logo</h4>
-<div class="row p-0 m-0 align-items-between">
+<div class="row p-0 m-0 d-flex align-items-between 
+    justify-content-center justify-content-sm-around justify-content-md-start">
 <% logos.forEach((logo, index) => { %>
-    <div class="col-3 text-center">
+    <div class="col-5 col-md-3 text-center">
 	<button class="text-white my-3 btn btn-lg btn-light btn-outline-secondary"
 	    style="background: <%=logo.color%>"
 	    onclick="setColor('<%=logo.color%>', <%=index%>, 
