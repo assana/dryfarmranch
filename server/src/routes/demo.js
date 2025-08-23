@@ -70,6 +70,8 @@ router.get("/colors", async function (req, res)
 	    {color: 'var(--navbar-bg0)', name:'Maeve'},
 	    {color: 'var(--navbar-bg1)', name:'1'},
 	    {color: 'var(--navbar-bg2)', name:'2'},
+	    {color: 'var(--bg-color7)', name:'7'},
+	    {color: 'var(--bg-color2)', name:'2'},
 	];
 
 	const logos = [
