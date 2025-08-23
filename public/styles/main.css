@@ -107,8 +107,6 @@ a:active {
 .formCard {
     background-color: white;
     border: 1px solid var(--medium-grey9);
-    border-radius: 8px;
-    padding: 2rem;
 }
 
 /* Extra small, iPhone SE */

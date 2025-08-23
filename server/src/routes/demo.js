@@ -75,8 +75,9 @@ router.get("/colors", async function (req, res)
 	];
 
 	const logos = [
-	    {color: 'var(--theme-color-denim)', name:'Denim'},
-	    {color: 'var(--theme-color-leather)',   name:'Leather'},
+	    {color: 'var(--theme-color-denim)',  name:'Denim'},
+	    {color: 'var(--theme-color-leather)',name:'Leather'},
+	    {color: 'var(--theme-color-leaf)',	 name:'Leaf'},
 	];
 
 	return res.render('demo/colors', {backgrounds, navbars, logos});

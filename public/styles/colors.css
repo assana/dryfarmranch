@@ -10,6 +10,7 @@
     --link-color:	#006476;
     --theme-color-leather:#A62814;
     --theme-color-denim:#447BA6;
+    --theme-color-leaf:#2B8B57;
 
     --header-background:var(--dark-grey);
     --legend-background:var(--dark-grey);
@@ -43,7 +44,7 @@
     --body-background:		var(--bg-color7);
     --flyer-background:		var(--bg-color7);
     --navbar-background:	var(--navbar-bg0);
-    --theme-color:		var(--theme-color-denim);	/* dirt color */
+    --theme-color:		var(--theme-color-denim);	
     --keyFeatures-background: 	var(--bg-color8);
     --keyFeatures-stripe-background: var(--bg-color5);
 }

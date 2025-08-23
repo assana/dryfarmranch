@@ -73,7 +73,7 @@ const sendInfoRequest = async (infoRequest) =>
 
 	if (process.env.NODE_ENV === 'production') {
 	    const email = {
-		to:		'assana@digitalpaso.com',
+		to:		'info@dryfarmranch.com',
 		subject: 	'Information request from website.',
 		from:		'info@digitalpaso.com',
 		html:		html
@@ -87,7 +87,7 @@ const sendInfoRequest = async (infoRequest) =>
 		from:		'info@digitalpaso.com',
 		html:		html
 	    };
-	    if (0) {
+	    if (1) {
 		await sgMail.send(email);	
 	    } else {
 		await fs.writeFileSync(`/tmp/email.html`, html);

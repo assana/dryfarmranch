@@ -8,6 +8,7 @@
 <style type="text/css">
 .grecaptcha-badge  { visibility: visible; }
 .vert {border-right: 1px solid var(--medium-grey9);}
+
 </style>
 
 </head>
@@ -28,8 +29,8 @@
 </p>
 </section>
 
-<div class="vision m-0 p-0 m-2">
-<div class="row justify-content-between m-0 p-0">
+<div class="m-0 p-0">
+<div class="row formCard justify-content-between m-0 p-0">
 
 <div class="col-12 col-md-3 d-flex pt-3">
 <p><span class="fw-bold">email</span><br />
@@ -67,13 +68,18 @@
 </div>
 </form>
 
-<div class="d-flex justify-content-end align-items-end py-4">
+<div class="row d-flex align-items-end pt-2 mb-3">
+<div class="col d-flex justify-content-start">
         <%- include ('../partials/goBackButton.ejs'); %>
+</div>
+<div class="col d-flex justify-content-end">
         <button form="contactForm" type="reset" 
 	    class="btn btn-outline-secondary mx-2">Clear</button>
         <button form="contactForm" type="submit" 
-	    class="btn btn-outline-success me-2">Send</button>
+	    class="btn btn-outline-success">Send</button>
+</div
 </div>
+
 </div> <!-- form column -->
 
 </div> <!-- white box row -->
